@@ -1,9 +1,21 @@
 import os
-from flask import Flask
+from flask import (
+    Flask, render_template, flash,
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 if os.path.exists("env.py"):
     import env
 
+"""
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "cZr6kfUiN7")
+os.environ.setdefault("MONGO_URI", "mongodb+srv://shiva:Gitclub123@myfirstcluster.9kpcw.mongodb.net/services?retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_DBNAME", "services")
+
+"""
 
 # create an instance of flask
 
@@ -17,11 +29,13 @@ app.secter_key = os.environ.get("SERCET_KEY")
 
 mongo = PyMongo(app)
 
-
+coll = mongo.db.jobs
 @app.route("/")
-def hello():
-    return "This is initial test only"
-    
+@app.route("/home_page")
+def home_page():
+    services = coll.find()
+    return  render_template("home.html")
+
 
 
 if __name__ == "__main__":

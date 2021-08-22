@@ -21,20 +21,19 @@ os.environ.setdefault("MONGO_DBNAME", "services")
 
 app = Flask(__name__)
 
-app.secret_key = "super secret key"
-
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secter_key = os.environ.get("SERCET_KEY")
+app.secret_key = os.environ.get("SERCET_KEY")
 
 mongo = PyMongo(app)
 
-coll = mongo.db.jobs
+
+# route to landing page
 @app.route("/")
 @app.route("/home_page")
 def home_page():
-    services = coll.find()
-    return  render_template("home.html")
+    jobs = mongo.db.jobs.find()
+    return render_template("home.html", jobs=jobs)
 
 
 

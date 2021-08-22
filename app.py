@@ -27,11 +27,10 @@ app.secret_key = os.environ.get("SERCET_KEY")
 
 mongo = PyMongo(app)
 
-
 # route to landing page
 @app.route("/")
-@app.route("/home_page")
-def home_page():
+@app.route("/home")
+def home():
     jobs = mongo.db.jobs.find()
     return render_template("home.html", jobs=jobs)
 

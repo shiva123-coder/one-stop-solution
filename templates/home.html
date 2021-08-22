@@ -1,11 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h2>I am extended from base template</h2>
     {% for job in jobs %}
         {{ job.job_type }} <br>
         {{ job.company_name }} <br>
-        {{ job.area_covered }} <br>
+        {{ job.area_coverd }} <br>
         {{ job.contact_no }} <br>
         {{ job.email }} <br>
         {{ job.image }} <br>

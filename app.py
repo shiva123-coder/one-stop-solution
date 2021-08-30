@@ -3,6 +3,7 @@ from flask import (
     Flask, render_template, flash,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from werkzeug.security import generate_passowrd_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -18,7 +19,6 @@ os.environ.setdefault("MONGO_DBNAME", "services")
 """
 
 # create an instance of flask
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -27,6 +27,7 @@ app.secret_key = os.environ.get("SERCET_KEY")
 
 mongo = PyMongo(app)
 
+
 # route to landing page
 @app.route("/")
 @app.route("/home")
@@ -34,6 +35,11 @@ def home():
     jobs = mongo.db.jobs.find()
     return render_template("home.html", jobs=jobs)
 
+
+# route to login page
+app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("login.html")
 
 
 if __name__ == "__main__":

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <title>One Stop Solutions</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
+  {% block styles %}
+  {% endblock %}
+  <title>One Stop Solutions</title>
 </head>
 <body>
     <header>
@@ -32,119 +36,15 @@
       </ul>
   </ul>
     </header>
-    <section class="">
-      <!-----------job list 1 --------->
-      <div class="row">
-        <div class="col s12 m6 xl4 push-xl1 offset-xl1 odd-job">
-          <div class="card">
-            <div class="card-image">
-              <img src="static/images/electric.jpg">
-              <span class="card-title">Electrical</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      <!-----------job list 2 --------->
-        <div class="col s12 m6 xl4 pull-xl1 offset-xl2 even-job">
-          <div class="card">
-            <div class="card-image">
-              <img src="static/images/plumbing.jpg">
-              <span class="card-title">Plumbing</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-----------job list 3 --------->
-      <div class="row">
-        <div class="col s12 m6 push-xl1 xl4 offset-xl1 odd-job">
-          <div class="card">
-            <div class="card-image">
-              <img src="static/images/cleaning.jpg">
-              <span class="card-title">Cleaning</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      <!-----------job list 4 --------->
-        <div class="col s12 m6 pull-xl1 xl4 offset-xl2 even-job">
-          <div class="card">
-            <div class="card-image">
-              <img src="static/images/gardening.jpg">
-              <span class="card-title">Gardening</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-----------job list 5 --------->
-      <div class="row">
-        <div class="col s12 m6 push-xl1 xl4 offset-xl1 odd-job">
-          <div class="card">
-            <div class="card-image">
-              <img src="static/images/driving.jpg">
-              <span class="card-title">Drivng Training</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      <!-----------job list 6 --------->
-        <div class="col s12 m6 pull-xl1 xl4 offset-xl2 even-job">
-          <div class="card">
-            <div class="card-image">
-              <img src="static/images/web.jpg">
-              <span class="card-title">Website Build</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      </div>
     
-    </section>
    {% block content %}
-    
    {% endblock %}
-    
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-  
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+   {% block scripts %}
+   {% endblock %}
 </body>
 </html>

@@ -26,19 +26,26 @@
             class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="{{ url_for('home') }}">Home</a></li>
-          <li><a href="{{ url_for('login') }}">Login</a></li>
-          <li><a href="{{ url_for('register') }}">Register</a></li>
-          <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
+          {% if session.user %}
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
+          {% else %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
     <!-----mobile sidenav------->
     <ul class="sidenav" id="mobile-demo">
       <li><a href="{{ url_for('home') }}">Home</a></li>
-      <li><a href="{{ url_for('login') }}">Login</a></li>
-      <li><a href="{{ url_for('register') }}">Register</a></li>
-      <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
-    </ul>
+      {% if session.user %}
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
+          {% else %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+          {% endif %}
     </ul>
   </header>
   <section>

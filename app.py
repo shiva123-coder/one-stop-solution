@@ -33,8 +33,9 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    jobs = mongo.db.jobs.find()
-    return render_template("home.html", jobs=jobs)
+    # jobs = mongo.db.jobs.find()
+    return render_template("home.html")
+    # return render_template("home.html", jobs=jobs)
 
 
 # route to login page
@@ -110,6 +111,12 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/add_job")
+def add_job():
+    return render_template("add_job.html")
+
 
 
 if __name__ == "__main__":

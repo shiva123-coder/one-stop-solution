@@ -1,3 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    overflow-x: hidden;
+   
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-x: hidden;    
+
+}
+
 .nav-extended {
     background: linear-gradient(to right, #a06529f7, #da3434);
 }

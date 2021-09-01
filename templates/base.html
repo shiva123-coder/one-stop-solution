@@ -29,6 +29,7 @@
           {% if session.user %}
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
             <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
+            <li><a href="{{ url_for('add_job') }}" id="first">Add new job</a></li>
           {% else %}
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -40,12 +41,13 @@
     <ul class="sidenav" id="mobile-demo">
       <li><a href="{{ url_for('home') }}">Home</a></li>
       {% if session.user %}
-            <li><a href="{{ url_for('logout') }}">Logout</a></li>
-            <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
-          {% else %}
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-          {% endif %}
+          <li><a href="{{ url_for('logout') }}" id="first">Logout</a></li>
+          <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
+          <li><a href="{{ url_for('add_job') }}" id="first">Add new job</a></li>
+      {% else %}
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('register') }}">Register</a></li>
+      {% endif %}
     </ul>
   </header>
   <section>

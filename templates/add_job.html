@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="orange center-align">Add new job</h3>
+
+        <div class="row card-panel light-grey">
+            <form class="col s12 new-form" method="POST" action="">
+                <div class="input-field col s12">
+                    <i class="fas fa-search prefix"></i>
+                    <select>
+                        <option value="" disabled selected>Select Job type</option>
+                        <option value="1">Electrical Work</option>
+                        <option value="2">Plumbing</option>
+                        <option value="3">Cleaning</option>
+                        <option value="4">Gardening</option>
+                        <option value="5">Driving training</option>
+                        <option value="6">Website build</option>
+                    </select>
+                </div>
+                <!--company name-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-building prefix"></i>
+                        <input id="company_name" name="company_name" minlength="5" maxlength="20" type="text"
+                            class="validate">
+                        <label for="company_name">Company Name</label>
+                    </div>
+                </div>
+                <!--charge-->
+                <div class="row">
+                    <div class="input-field col col s12">
+                        <i class="fas fa-pound-sign prefix"></i>
+                        <input id="charge" name="charge" type="number" class="validate">
+                        <label for="charge">Charge p/h</label>
+                    </div>
+                </div>
+                <!--contact no-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-phone-alt prefix"></i>
+                        <input id="contact_no" name="contact_no" type="tel"
+                           pattern="[0-9]{11}" class="validate">
+                        <label for="contact_no">Contact no</label>
+                    </div>
+                </div>
+                <!----email---->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-at prefix"></i>
+                        <input id="email" type="email" name="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <!--description--->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-align-left  prefix"></i>
+                        <textarea id="job_description" name="job_description"
+                            minlength="50" maxlength="500" class="materialize-textarea validate"
+                            required></textarea>
+                        <label for="job_description">Job description</label>
+                    </div>
+                </div>
+            </form>
+        </div>          
+
+{% endblock %}

@@ -4,17 +4,14 @@
     <h3 class="orange center-align">Add new job</h3>
 
         <div class="row card-panel light-grey">
-            <form class="col s12 new-form" method="POST" action="">
+            <form class="col s12 new-form" method="POST" action="{{ url_for('add_job') }}">
                 <div class="input-field col s12">
                     <i class="fas fa-search prefix"></i>
                     <select>
-                        <option value="" disabled selected>Select Job type</option>
-                        <option value="1">Electrical Work</option>
-                        <option value="2">Plumbing</option>
-                        <option value="3">Cleaning</option>
-                        <option value="4">Gardening</option>
-                        <option value="5">Driving training</option>
-                        <option value="6">Website build</option>
+                        <option value="" disabled selected>Job type</option>
+                        {% for selection in selections %}
+                            <option value="{{ selection.job_type }}">{{ selection.job_type }}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <!--company name-->
@@ -58,9 +55,12 @@
                         <textarea id="job_description" name="job_description"
                             minlength="50" maxlength="500" class="materialize-textarea validate"
                             required></textarea>
-                        <label for="job_description">Job description</label>
+                        <label for="job_description">description</label>
                     </div>
                 </div>
+                <!----submit button--->
+                <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                        
             </form>
         </div>          
 

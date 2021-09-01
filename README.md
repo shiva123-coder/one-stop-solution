@@ -18,3 +18,6 @@
 - Browser threw werkzeug.routing.BuildError while I was initially testing my registration page, this took me a while to figure out as I couldn't spot any issue in my codes and neither any speeling error, however I have somehow spoted that there was [typo](static/images/typo1.jpg) on app.py file as I as missing @ symbol on my routing and this was causing an error which solved after I corrected this.
 
 - There was [TypeError](static/images/typeError1.jpg) shown on live browser and also on my terminal while I was testing my account.html page after writing python logic to app.py file. upon checking the error message I knew that this was related to app.py file and I started to run through logic on app.py file and found that I was missing to pass an argument inside the function while creating function for account.html page, issue ressolved once I passed an argument to the function.
+
+- [405 error](static/images/405error.jpg) noticed While I was testing my add_job.html page on live browser, I was mainly checking the functionality to add new job however it didnt worked and threw an error
+ - I did some depth research on 405 error and then start checking my logic on app.py then I spotted that no methods were given while creating @app.route for add_job template, I then added methods=["GET", "POST"] to @app.route which then fixed an issue

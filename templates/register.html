@@ -28,8 +28,15 @@
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
-                <span class="white-text">Register Here
-                </span>
+            </div>
+            <!----login option for those users who alraedy registered-->
+            <div class="row">
+                <div class="col s12">
+                    <p class="center-align">
+                        Already Registered?
+                        <a href="{{ url_for('login') }}" class="light-green-text">Login Here</a>
+                    </p>
+                </div>
             </div>
         </form>
     </div>

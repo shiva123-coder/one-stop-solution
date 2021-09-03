@@ -5,6 +5,64 @@
 - The ONE-STOP Solution is a website dedicated as a platform for various self-employed people who want to sell their skills and provide services to the communities. The   website allows users to search and view various services, register and add the applicable services as well as interact with the website’s administrator to query and book available services. Furthermore, users can be added and removed by the admin. This website is my Milestone Project 3 for the Full Stack Developer course at Code Institute. In addition, I am planning to use this website to start my own online business in the near future.
 
 
+## User Experience(UX)
+
+The goal of this website is to provide a satisfactory user experience and an accessible platform for users to find various available services which can be useful to support the necessities and day-to-day activities. The website should allow users to easily register or login and search for the right services at the right time based on their requirements. The users are also able to easily add and edit their services as well as find the required services via this website.
+
+### User Stories
+
+#### First Time User Goals
+- As a first time user, I would like to be able to search for any specific services on the website.
+- As a first time user, I would like to be able to register and create my own account on the website.
+- As a first time user, I would like to be able to add, edit and remove my own services.
+
+#### Frequent User Goals
+- As a frequent user, I would like to be able to search for any specific services on the website.
+- As a frequent user, I want to login to my existing account to add, edit and remove my services.
+- As a frequent user, I want to be able to save my services for other users to search and view them.
+- As a frequent user, I want to be able to contact the admin to query and book for available services.
+- As a frequent user, I would like to be able to logout from my own profile.
+
+#### Return User Goals
+- As a return user, I want to easily navigate the site across all pages.
+- As a return user, I want to easily search for any specific services on the website.
+- As a return user, I would like to be able to access my existing profile to add, edit and remove my services.
+- As a return user, I want to be able to save my services for other users to search and view them.
+- As a return user, I want to be able to interact with the admin to query or book for various services.
+
+## UX Framework
+
+### Strategy
+
+The ONE-STOP Solution is an online platform to access various services with front-end and back-end functionality, created using HTML, JavaScript, CSS, Python, Flask, and MongoDB. The goal is to create a website that is user-friendly and allows users to easily search and get various available services.
+
+### Scope
+
+The website is interactive and allows users to input or add their own services for other users to view or display, allowing them to edit and remove or delete their registered services and search for different services. The website has CRUD functionality. The users should also be able to contact the admin and get support with query and booking of the available services.
+
+#### Functional Requirements
+
+Functional requirements include: a user-friendly navigation menu, a search bar, working templates for services to be added, database functionality that stores user login information and ability to create new accounts, with authentication. In addition, the website should be responsive for various screen sizes, whilst maintaining the same level of functionality. The main functionality of the website is to allow users to create, read, update, and delete data, known as CRUD. The data created is stored in a database, and can be read through various pages on the website. The users also have the option to update and edit the data they have submitted, as well as delete it altogether. A search field allows users to search for specific services they are interested in.
+
+#### Content Requirements
+
+The content of the site should include a header and image, as well as a navigation menu. A search bar should allow users to search for services types. For each service, an image should be included, as well as its type or category and a short description of the service. An input field for users will allow them to add different services, and they are also able to provide their availability, which will be compiled as a list or options alongside other service categories.
+
+### Structure
+
+The website is structured to allow new visitors to view numerous services on the landing page once they open the website. From there, they are able to log in or register, which will allow them to create and view their profile page of existing services. Once logged in, users are able to click on the main header, which allows them to search for different services, as well as add and edit their own services. In addition, the users are able to save the registered services. Once the user wishes to end their session, they can click the 'Log Out' option in the menu to return to the home page.
+
+### Skeleton
+
+The skeleton of the website will utilise Materialize for the CSS layout of the pages. A navigation menu will allow users to go to their chosen pages. The main landing page will function to allow users to select numerous service types or categories they are interested in, and provide links to add or edit their own services. This minimises the need for different pages for users to visit and provides a seamless experience. When adding or editing a service, additional options in the navigation menu allow the user to navigate back to their own profile, or to end the session and log out. This simplifies the number of options for the user and keeps the website easy to use.
+
+### Surface
+
+The surface design of the website will also utilise Materialize CSS to provide a theme and styling for the components of the website. Google Fonts is used to style the text using the Yusei Magic' and 'Ovo' fonts  and FontAwesome is used for various icons. The colour scheme is designed to be professionally appealing to the target audience of varied professionals, and provide clear readability as well as being responsive.
+
+
+
+
 ## Issues and Ressolutions
 - Live browser did not worked and upon checking on Gitpod terminal , Error 98 was shown
  - I did my research on google/slack and stack overflow and found the solution of it by closing all the open ports by using kill command as below :

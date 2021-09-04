@@ -65,10 +65,10 @@ The surface design of the website will also utilise Materialize CSS to provide a
 
 ## Issues and Ressolutions
 - Live browser did not worked and upon checking on Gitpod terminal , Error 98 was shown
- - I did my research on google/slack and stack overflow and found the solution of it by closing all the open ports by using kill command as below :
-   - First I viewed all the open ports by clicking on Ports which is displayed on bottom right of my workspace
-   - Then I typed lsof -i:<'port number'> command in my terminal, this displyed PID associated with port number
-   - Finally I have used kill -9 <'PID'> command which then kill the port that I wanted.
+  - I did my research on google/slack and stack overflow and found the solution of it by closing all the open ports by using kill command as below :
+    1. _First I viewed all the open ports by clicking on Ports which is displayed on bottom right of my workspace_
+    1. _Then I typed lsof -i:<'port number'> command in my terminal, this displyed PID associated with port number_
+    1. _Finally I have used kill -9 <'PID'> command which then kill the port that I wanted._
 
 - I was not able to see the live preview on browser while using python3 app.py command on my terminal, upond checking on the terminal I noticed that ValueError was shown
   - I then checked all of my codes and logic and noticed [typo](static/images/valueerror1.jpg) on env.py file where I typed MONGO.URI instead of MONGO_URI, problem solved after i fixed this typo.
@@ -81,3 +81,5 @@ The surface design of the website will also utilise Materialize CSS to provide a
   - I did some depth research on 405 error and then start checking my logic on app.py then I spotted that no methods were given while creating @app.route for add_job template, I then added methods=["GET", "POST"] to @app.route which then fixed an issue
 
 - Issue with POST method on the form that I created to add new job for users, I filled the form and submit however after checking on MongoDB databse, I have noticed that some of the input value were not shown on collection , instead [null](static/images/null1.jpg) was shown, upon cross checking all the name and speelings on my HTML and flask I have found that there was mismatch on the name that I used, I was using job_description on HTML and description on app.py file while building POST method and this was causing problem which then fixed once I updated this
+
+- I stored some images on my databse using their URL which I wanted to render on my home page directly, however upon testing on browser images did not displayed, instead only URL was shown as a string. I had to then do some depth research on how to store images on mongoDB however I couldnt find any easy process, after few hours of struggle I decided to re-check my codes and noticed that I have [not supplied img tag inside jinja for loop](static/images/image_url1.jpg) in home.html which was causing an issue in this case. This one sorted after I updated my jinja for loop with img tag inside the loop.

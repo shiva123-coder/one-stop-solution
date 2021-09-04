@@ -20,3 +20,8 @@ body{
     background: linear-gradient(to right, #a06529f7, #da3434);
 }
 
+/*----image for home page---*/
+.job-images{
+    height: 300px;
+    width: auto;
+    }

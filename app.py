@@ -29,16 +29,15 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# route to landing page
+# home page
 @app.route("/")
 @app.route("/home")
 def home():
-    # jobs = mongo.db.jobs.find()
-    return render_template("home.html")
-    # return render_template("home.html", jobs=jobs)
+    jobs = mongo.db.jobs.find()
+    return render_template("home.html", jobs=jobs)
 
 
-# route to login page
+# user login page
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -67,7 +66,7 @@ def login():
     return render_template("login.html")
 
 
-# route to register page
+# register page
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -93,6 +92,7 @@ def register():
     return render_template("register.html")
 
 
+# user profile page
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
     # retreive only username from database
@@ -113,17 +113,17 @@ def logout():
     return redirect(url_for("login"))
 
 
-# route to add new job page
+# add new job page
 @app.route("/add_job", methods=["GET", "POST"])
 def add_job():
     if request.method == "POST":
         job = {
+            "image": request.form.get("image"),
             "job_type": request.form.get("job_type"),
             "company_name": request.form.get("company_name"),
             "charge": request.form.get("charge"),
             "contact_no": request.form.get("contact_no"),
             "email": request.form.get("email"),
-            "image": request.form.get("image"),
             "description": request.form.get("description"),
             "added_by": session["user"]
         }

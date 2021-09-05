@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="center-align">Welcome to OSS Limited, <small>one platform for all solutions</small></h3>
+<h3 class="center-align">Welcome to OSS Limited, <small class="slogan">one platform for all solutions</small></h3>
 
   
       <div class="row">
@@ -15,7 +15,10 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <a class="waves-effect waves-light btn modal-trigger" href="#job_modal">{{ job.job_type}}</a>
+                  <a class="waves-effect waves-light white black-text btn modal-trigger"
+                    href="#job_modal">{{ job.job_type}}
+                    <i class="fas fa-mouse"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -33,8 +36,8 @@
            </p>
           </div>
           <div class="modal-footer">
-            <a class="waves-effect waves-light btn">Contact us!</a>
-            <a href="#!" class="modal-close waves-effect waves-green btn">Cancel</a>
+            <a class="waves-effect waves-light grey black-text btn">Contact us!</a>
+            <a href="#!" class="modal-close waves-effect waves-light grey black-text btn">Cancel</a>
           </div>
         </div>
         {% endfor %}

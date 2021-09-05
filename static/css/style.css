@@ -4,7 +4,6 @@
 
 html{
     overflow-x: hidden;
-   
 }
 
 body{
@@ -21,7 +20,12 @@ body{
     background: linear-gradient(to right, #a06529f7, #da3434);
 }
 
-/*----images for home page---*/
+/*----home page---*/
+
+.slogan{
+    color: maroon;
+    font-style: italic;
+}
 
 .hero-image{
     height: 250px;
@@ -54,7 +58,7 @@ body{
 .card-header{
     text-align: center;
     padding: 50px 10px;
-    background: rgb(12 125 31 / 39%);
+    background: rgb(189 47 47 / 71%);
     color: #ffff;
 }
 
@@ -70,10 +74,17 @@ body{
     margin-top: 9.8%;
 }
 
+.main-heading{
+    margin-top: 5%;
+    margin-bottom: -5%;
+}
 
 /* ------- footer ------*/
 .page-footer{
     background: linear-gradient(to right, #a06529f7, #da3434);
+    left: 0;
+    bottom: 0;
+    width: 100vw;
 }
 
 /*----media screen ---*/

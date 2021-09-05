@@ -5,6 +5,15 @@
 
         <div class="row card-panel light-grey">
             <form class="col s12 new-form" method="POST" action="{{ url_for('add_job') }}">
+                <!----image----->
+                <div class="row col s12 col m8 offset-l2 col l8">
+                    <div class="input-field col s12">
+                        <i class="far fa-images prefix"></i>
+                        <input id="image_url" name="image_url" type="text" class="validate" required>
+                        <label for="image_url">Image URL</label>
+                        <small class="center-align red-text" id="error_jobtype"></small>
+                    </div>
+                </div>
                 <!---job type---->
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">

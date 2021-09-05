@@ -111,14 +111,14 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-
+    
 
 # add new job page
 @app.route("/add_job", methods=["GET", "POST"])
 def add_job():
     if request.method == "POST":
         job = {
-            "image": request.form.get("image"),
+            "image": request.form.get("image_url"),
             "job_type": request.form.get("job_type"),
             "company_name": request.form.get("company_name"),
             "charge": request.form.get("charge"),
@@ -133,7 +133,6 @@ def add_job():
 
     selections = mongo.db.jobs.find()
     return render_template("add_job.html", selections=selections)
-
 
 
 if __name__ == "__main__":

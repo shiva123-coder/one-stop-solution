@@ -1,14 +1,41 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 class="orange center-align">Welcome to OSS Limited, one platform for all solutions</h3>
-  {% for job in jobs %}
-        <img src="{{ job.image }}"
-           class="job-images" /> <br>
-        {{ job.job_type }} <br>
-        {{ job.company_name }} <br>
-        {{ job.contact_no }} <br>
-        {{ job.email }} <br>
-        {{ job.description }} <br>
-  {% endfor %} 
+
+  
+      <div class="row">
+        {% for job in jobs %}
+          <div class="col s12 m6">
+            <div class="card green-card">
+              <div class="card-image">
+                <img src="{{ job.image }}">
+                <span class="card-title blue">{{ job.job_type }}</span>
+              </div>
+              <div class="card-content">
+                <p>{{ job.description }}</p>
+              </div>
+              <div class="card-action">
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Our details</h4>
+              <p>Company Name : {{ job.company_name }} <br>
+                 Callout Cost : {{ job.charge }} <br>
+                 Contact no. :  {{ job.contact_no }} <br>
+                 Email : {{ job.email }} <br>
+                 Added by : {{ job.added_by}}                
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a class="modal-close waves-effect waves-light btn">cancel</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
 
 {% endblock %}

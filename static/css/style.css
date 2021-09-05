@@ -20,8 +20,55 @@ body{
 }
 
 /*----image for home page---*/
-.job-images{
-    height: 300px;
-    width: auto;
+.hero-image{
+    height: 250px;
     }
 
+.container{
+    width: 90%;
+    margin: 50px auto;
+}
+
+/* .heading{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+} */
+
+.card-row{
+    margin-bottom: 50px;
+
+}
+
+.card{
+    width: 100%;
+    background-color: aqua;
+    border: 1px solid #ccc;
+    margin-bottom: 50px;
+    transition: 0.9s;
+}
+
+.card-header{
+    text-align: center;
+    padding: 50px 10px;
+    background: rgb(12 125 31 / 39%);
+    color: #ffff;
+}
+
+.card-body{
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+@media screen and (max-width:768px){
+        .container{
+            width: 100%;
+        }
+
+        .heading{
+            padding: 20px;
+            font-size: 20px;
+        }
+}

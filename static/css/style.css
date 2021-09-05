@@ -12,14 +12,17 @@ body{
     padding: 0;
     font-size: 1rem;
     line-height: 1.5;
-    overflow-x: hidden;    
+    overflow-x: hidden; 
 }
+
+/* -----navbar----*/
 
 .nav-extended {
     background: linear-gradient(to right, #a06529f7, #da3434);
 }
 
-/*----image for home page---*/
+/*----images for home page---*/
+
 .hero-image{
     height: 250px;
     }
@@ -61,6 +64,19 @@ body{
     font-size: 18px;
 }
 
+/*------register page -----*/
+
+.input-row{
+    margin-top: 9.8%;
+}
+
+
+/* ------- footer ------*/
+.page-footer{
+    background: linear-gradient(to right, #a06529f7, #da3434);
+}
+
+/*----media screen ---*/
 
 @media screen and (max-width:768px){
         .container{
@@ -71,4 +87,15 @@ body{
             padding: 20px;
             font-size: 20px;
         }
+}
+
+@media (min-width:1024px) and (max-width:1024px) {
+    .main-heading {
+        margin-top: 15%;
+        margin-bottom: 10%;
+    }
+
+    .input-row{
+        margin-bottom: 11%;
+    }
 }

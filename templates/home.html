@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="orange center-align">Welcome to OSS Limited, one platform for all solutions</h3>
+<h3 class="center-align">Welcome to OSS Limited, <small>one platform for all solutions</small></h3>
 
   
       <div class="row">
@@ -15,27 +15,28 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <a class="waves-effect waves-light btn">{{ job.job_type}}</a>
+                  <a class="waves-effect waves-light btn modal-trigger" href="#job_modal">{{ job.job_type}}</a>
                 </div>
               </div>
             </div>
           </div>
-        </div>          
-          <!-- Modal Structure -->
-          <div id="modal1" class="modal">
-            <div class="modal-content">
-              <h4>Our details</h4>
-              <p>Company Name : {{ job.company_name }} <br>
-                 Callout Cost : {{ job.charge }} <br>
-                 Contact no. :  {{ job.contact_no }} <br>
-                 Email : {{ job.email }} <br>
-                 Added by : {{ job.added_by}}                
-              </p>
-            </div>
-            <div class="modal-footer">
-              <a class="modal-close waves-effect waves-light btn">cancel</a>
-            </div>
+        </div>
+        <!------Modal--- -->
+        <div id="job_modal" class="modal">
+          <div class="modal-content">
+            <h4 class="center-align">Our details</h4>
+            <p>Company Name : {{ job.company_name }} <br>
+              Callout Cost : {{ job.charge }} <br>
+              Contact no. :  {{ job.contact_no }} <br>
+              Email : {{ job.email }} <br><br><br>
+              {{ job.description}}                
+           </p>
           </div>
+          <div class="modal-footer">
+            <a class="waves-effect waves-light btn">Contact us!</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn">Cancel</a>
+          </div>
+        </div>
         {% endfor %}
       </div>
 

@@ -19,11 +19,11 @@
                             </div>
                             <div class="card-body">
                                 <a class="waves-effect waves-light white black-text btn modal-trigger"
-                                    href="#job_modal">Edit
+                                    href="{{ url_for('edit_job', job_id=service._id) }}">Edit
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <a class="waves-effect waves-light white black-text btn modal-trigger"
-                                    href="#job_modal">Delete
+                                    href="#">Delete
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
                             </div>

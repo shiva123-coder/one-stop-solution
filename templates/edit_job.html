@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="orange center-align">Add new job</h3>
+    <h3 class="orange center-align">Edit Job</h3>
 
         <div class="row card-panel light-grey">
-            <form class="col s12 new-form" method="POST" action="{{ url_for('add_job') }}">
+            <form class="col s12 new-form" method="POST" action="{{ url_for('edit_job', job_id=job._id) }}">
                 <!----image----->
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="far fa-images prefix"></i>
-                        <input id="image_url" name="image_url" type="text" class="validate" required>
+                        <input id="image_url" name="image_url"  value="{{ job.image }}" type="text" class="validate" required>
                         <label for="image_url">Image URL</label>
                         <small class="center-align red-text" id="error_jobtype"></small>
                     </div>
@@ -18,7 +18,7 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="fas fa-briefcase prefix"></i>
-                        <input id="job_type" name="job_type" minlength="5"
+                        <input id="job_type" value="{{ job.job_type }}" name="job_type" minlength="5"
                             maxlength="20" type="text" class="validate" required>
                         <label for="job_type">Job type</label>
                         <small class="center-align red-text" id="error_jobtype"></small>
@@ -28,7 +28,7 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="fas fa-building prefix"></i>
-                        <input id="company_name" name="company_name" minlength="5"
+                        <input id="company_name"  value="{{ job.company_name }}" name="company_name" minlength="5"
                             maxlength="20" type="text" class="validate" required>
                         <label for="company_name">Company Name</label>
                         <small class="center-align red-text" id="error_name"></small>
@@ -38,7 +38,7 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col col s12">
                         <i class="fas fa-pound-sign prefix"></i>
-                        <input id="charge" name="charge" type="number"
+                        <input id="charge"  value="{{ job.charge }}" name="charge" type="tel"
                              class="validate" required>
                         <label for="charge">Charge p/h</label>
                         <small class="center-align red-text" id="error_cost"></small>
@@ -48,7 +48,7 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="fas fa-phone-alt prefix"></i>
-                        <input id="phone" name="phone" type="tel"
+                        <input id="phone" value="{{ job.contact_no }}"name="phone" type="tel"
                            pattern="[0-9]{11}" class="validate" required>
                         <label for="phone">Contact no</label>
                         <small class="center-align red-text" id="error_contact"></small>
@@ -58,7 +58,7 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="fas fa-at prefix"></i>
-                        <input id="email" type="email" name="email" class="validate"
+                        <input id="email"  value="{{ job.email }}" type="email" name="email" class="validate"
                              required>
                         <label for="email">Email</label>
                         <small class="center-align red-text" id="error_email"></small>
@@ -70,14 +70,20 @@
                         <i class="fas fa-align-left prefix"></i>
                         <textarea id="description" name="description"
                             minlength="50" maxlength="250" class="materialize-textarea validate"
-                            required></textarea>
+                            required>{{ job.description }}"
+                        </textarea>
                         <label for="description">description</label>
                         <small class="center-align red-text" id="error_des"></small>
                     </div>
                 </div>
-                  <!----submit button--->
+                  <!----Edit button--->
                 <div class="col s12 center-align">
-                    <button class="btn waves-effect waves-light center-align" id="submit" type="submit">Submit</button>
+                    <a href="{{ url_for('account', username=session['user']) }}" class="waves-effect waves-light btn red">Cancel
+                        <i class="fas fa-window-close"></i>
+                    </a>
+                    <button class="btn waves-effect waves-light center-align" id="submit"
+                        type="submit">Edit <i class="fas fa-trash-alt"></i>
+                    </button>
                 </div>
             </form>
             </div>

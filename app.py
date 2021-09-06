@@ -104,7 +104,8 @@ def account(username):
         {"created_by": session["user"]}))    
 
     if session["user"]:
-        return render_template("account.html", username=username, services=services)
+        return render_template(
+            "account.html", username=username, services=services)
 
     return redirect(url_for("login"))
 
@@ -138,10 +139,17 @@ def add_job():
     selections = mongo.db.jobs.find()
     return render_template("add_job.html", selections=selections)
 
+   
+# edit job
+@app.route("/edit_job/<job_id>", methods=["GET", "POST"])
+def edit_job(job_id):
+    job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
+
+    selections = mongo.db.jobs.find()
+    return render_template("edit_job.html", job=job, selections=selections)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port= int(os.environ.get("PORT")),
     debug=True)                              # Note : Debug value must be set to false once project completed
-
-

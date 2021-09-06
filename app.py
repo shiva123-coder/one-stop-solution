@@ -75,7 +75,7 @@ def register():
             {"username": request.form.get("username").lower()})
         
         if existing_user:
-            flash("Username already exits")
+            flash("Username already exits, please use different username")
             return redirect(url_for("register"))
 
         register = {
@@ -99,8 +99,12 @@ def account(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    # retrive job details created by user
+    services = list(mongo.db.jobs.find(
+        {"created_by": session["user"]}))    
+
     if session["user"]:
-        return render_template("account.html", username=username)
+        return render_template("account.html", username=username, services=services)
 
     return redirect(url_for("login"))
 

@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+
 <h3 class="center-align">Welcome to OSS Limited, <small class="slogan">one platform for all solutions</small></h3>
 
-  
       <div class="row">
         {% for job in jobs %}
         <div class="col s12 m6 xl4">
@@ -31,7 +31,8 @@
             <p>Company Name : {{ job.company_name }} <br>
               Callout Cost : {{ job.charge }} <br>
               Contact no. :  {{ job.contact_no }} <br>
-              Email : {{ job.email }} <br><br><br>
+              Email : {{ job.email }}<br>
+              Created by : {{ job.created_by }} <br><br><br>
               {{ job.description}}                
            </p>
           </div>

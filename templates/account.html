@@ -1,13 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
+    <h3 class="center-align">{{ username.capitalize() }}'s Account</h3>
 
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel orange">
-                <h3 class="centre-align green-text"></h3>
-                {{ username }}'s Account
+    {% for service in services %}
+
+        {% if session["user"] == service.created_by %}
+            
+        <div class="row">
+            <div class="col s12col m8 offset-l2 col l8">
+                <div class="container">
+                    <div class="row card-row">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>{{ service.job_type}} </h3>
+                                <div class="card-image">
+                                    <img src="{{ service.image }}" class="hero-image">
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a class="waves-effect waves-light white black-text btn modal-trigger"
+                                    href="#job_modal">Edit
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a class="waves-effect waves-light white black-text btn modal-trigger"
+                                    href="#job_modal">Delete
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+
+        {% endif %}
+    {% endfor %}
+
 
 {% endblock %}

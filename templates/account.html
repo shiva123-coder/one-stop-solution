@@ -4,7 +4,7 @@
 
     {% for service in services %}
 
-        {% if session["user"] == service.created_by %}
+        {% if session["user"] == service.added_by %}
             
         <div class="row">
             <div class="col s12col m8 offset-l2 col l8">
@@ -18,14 +18,16 @@
                                 </div>
                             </div>
                             <div class="card-body">
+                           
                                 <a class="waves-effect waves-light white black-text btn modal-trigger"
                                     href="{{ url_for('edit_job', job_id=service._id) }}">Edit
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <a class="waves-effect waves-light white black-text btn modal-trigger"
-                                    href="#">Delete
+                                    href="{{ url_for('delete_job', job_id=service._id) }}">Delete
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
+                          
                             </div>
                         </div>
                     </div>

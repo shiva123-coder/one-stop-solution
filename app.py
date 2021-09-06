@@ -1,23 +1,15 @@
 import os
+import re
 from flask import (
     Flask, render_template, flash,
     redirect, request, session, url_for)
+# from string import punctuation
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-"""
-import os
-
-os.environ.setdefault("IP", "0.0.0.0")
-os.environ.setdefault("PORT", "5000")
-os.environ.setdefault("SECRET_KEY", "cZr6kfUiN7")
-os.environ.setdefault("MONGO_URI", "mongodb+srv://shiva:Gitclub123@myfirstcluster.9kpcw.mongodb.net/services?retryWrites=true&w=majority")
-os.environ.setdefault("MONGO_DBNAME", "services")
-
-"""
 
 # create an instance of flask
 app = Flask(__name__)
@@ -75,8 +67,53 @@ def register():
             {"username": request.form.get("username").lower()})
         
         if existing_user:
-            flash("Username already exits, please use different username")
+            flash(
+                f"Sorry, {request.form.get('username')} is alraedy registered\
+                     please try different username")
             return redirect(url_for("register"))
+        
+        """
+        check length of username is within the limit and
+        display flash message if length is outside of its limit
+        and redirect user to registration page again
+        """
+        if len(request.form.get("username")) not in range(5, 13):
+            flash (
+                "username should be between 5-12 character, please try again")
+            return redirect(url_for("register"))
+
+        # check and display flash message if username has any special character
+        """
+        concept of validating special character was taken from youtube
+        video of SDTE- Automatopn Techie (
+        https://www.youtube.com/watch?v=mG3aGgFYJSE)
+        also code was taken and modified as per project
+        requirement.
+        """
+        username_supplied = request.form.get("username").lower()
+        char =re.compile('[@_!#$%^&£()<>?|/\}{¬;*"=+]')
+        if(char.search(username_supplied) == None):
+            flash("Registration Successful")
+        else:
+            flash("username should not contain any special character")
+        return redirect(url_for("register"))
+
+        """
+        check length of password is within the limit and
+        display flash message if password length is outside of its limit
+        and redirect user to registration page again
+        """
+        if len(request.form.get("password")) not in range(5, 13):
+            flash(
+                "password should be between 5-12 character, please try again")
+            return redirect(url_for("register"))
+        
+        # check if password contain any space
+        password_supplied = request.form.get("password")
+        if ' ' in password_supplied:
+            flash("Password should contain no space")
+            return redirect(url_for("register"))
+
 
         register = {
             "username": request.form.get("username").lower(),
@@ -118,7 +155,7 @@ def logout():
     return redirect(url_for("login"))
     
 
-# add new job page
+# add new job to the page
 @app.route("/add_job", methods=["GET", "POST"])
 def add_job():
     if request.method == "POST":
@@ -163,11 +200,11 @@ def edit_job(job_id):
     return render_template("edit_job.html", job=job, selections=selections)
     
 
-# delet job from account
+# delete job from account
 @app.route("/delete_job/<job_id>")
 def delete_job(job_id):
     mongo.db.jobs.remove({"_id": ObjectId(job_id)})
-    flash("Your job has now deleted")
+    flash("Delete request has now Completed")
     return redirect(url_for('account', username=session['user']))
 
 

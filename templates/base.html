@@ -31,7 +31,10 @@
           {% if session.user %}
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
             <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
-            <li><a href="{{ url_for('add_job') }}" id="first">Add new job</a></li>
+            <li><a href="{{ url_for('add_job') }}">Add new job</a></li>
+            {% if session.user|lower == "admin"|lower %}
+            <li><a href="{{ url_for('manage') }}">Admin</a></li>
+          {% endif %}
           {% else %}
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -43,9 +46,13 @@
     <ul class="sidenav" id="mobile-demo">
       <li><a href="{{ url_for('home') }}">Home</a></li>
       {% if session.user %}
-          <li><a href="{{ url_for('logout') }}" id="first">Logout</a></li>
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
           <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
-          <li><a href="{{ url_for('add_job') }}" id="first">Add new job</a></li>
+          <li><a href="{{ url_for('add_job') }}" >Add new job</a></li>
+          {% if session.user|lower == "admin"|lower %}
+            <li><a href="{{ url_for('manage') }}">Admin</a></li>
+          {% endif %}
+          
       {% else %}
           <li><a href="{{ url_for('login') }}">Login</a></li>
           <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -93,6 +100,7 @@
       
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   {% block scripts %}

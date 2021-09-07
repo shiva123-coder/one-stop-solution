@@ -26,7 +26,7 @@ mongo = PyMongo(app)
 def home():
     jobs = mongo.db.jobs.find()
     return render_template("home.html", jobs=jobs)
-
+    
 
 # user login page
 @app.route("/login", methods=["GET", "POST"])
@@ -207,6 +207,13 @@ def delete_job(job_id):
     mongo.db.jobs.remove({"_id": ObjectId(job_id)})
     flash("Delete request has now Completed")
     return redirect(url_for('account', username=session['user']))
+
+
+# admin access only 
+@app.route("/manage")
+def manage():
+    all_jobs = mongo.db.jobs.find()
+    return render_template("manage.html", jobs=all_jobs)
 
 
 if __name__ == "__main__":

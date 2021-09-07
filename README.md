@@ -63,7 +63,7 @@ The surface design of the website will also utilise Materialize CSS to provide a
 
 
 
-## Issues and Ressolutions
+## Issues and Resolutions
 - Live browser did not worked and upon checking on Gitpod terminal , Error 98 was shown
   - I did my research on google/slack and stack overflow and found the solution of it by closing all the open ports by using kill command as below :
     1. _First I viewed all the open ports by clicking on Ports which is displayed on bottom right of my workspace_

@@ -3,7 +3,6 @@ import re
 from flask import (
     Flask, render_template, flash,
     redirect, request, session, url_for)
-# from string import punctuation
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -68,7 +67,7 @@ def register():
         
         if existing_user:
             flash(
-                f"Sorry, {request.form.get('username')} is alraedy registered\
+                f"username {request.form.get('username')} is alraedy registered\
                      please try different username")
             return redirect(url_for("register"))
         
@@ -82,26 +81,11 @@ def register():
                 "username should be between 5-12 character, please try again")
             return redirect(url_for("register"))
 
-        # check and display flash message if username has any special character
-        """
-        concept of validating special character was taken from youtube
-        video of SDTE- Automatopn Techie (
-        https://www.youtube.com/watch?v=mG3aGgFYJSE)
-        also code was taken and modified as per project
-        requirement.
-        """
-        username_supplied = request.form.get("username").lower()
-        char =re.compile('[@_!#$%^&£()<>?|/\}{¬;*"=+]')
-        if(char.search(username_supplied) == None):
-            flash("Registration Successful")
-        else:
-            flash("username should not contain any special character")
-        return redirect(url_for("register"))
-
         """
         check length of password is within the limit and
         display flash message if password length is outside of its limit
         and redirect user to registration page again
+
         """
         if len(request.form.get("password")) not in range(5, 13):
             flash(
@@ -114,6 +98,23 @@ def register():
             flash("Password should contain no space")
             return redirect(url_for("register"))
 
+        """
+        check wether password contain atleast one
+        special character or not and display flash
+        message accordingly.
+
+        concept of validating special character was taken from youtube
+        video of SDTE- Automatopn Techie (
+        https://www.youtube.com/watch?v=mG3aGgFYJSE)
+
+        """
+        password_supplied = request.form.get("password")
+        char =re.compile('[@_!#$%^&£()<>?|/\}{¬;*"=+]')
+        if(char.search(password_supplied) == None):
+            flash("password should contain atleast one special character")
+        else:
+            flash(" Registration Successful!")
+        return redirect(url_for("register"))
 
         register = {
             "username": request.form.get("username").lower(),
@@ -212,3 +213,5 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port= int(os.environ.get("PORT")),
     debug=True)                              # Note : Debug value must be set to false once project completed
+
+

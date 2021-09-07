@@ -109,7 +109,7 @@ def register():
 
         """
         password_supplied = request.form.get("password")
-        char =re.compile('[@_!#$%^&£()<>?|/\}{¬;*"=+]')
+        char = re.compile('[@_!#$%^&£()<>?|/\}{¬;*"=+]')
         if(char.search(password_supplied) == None):
             flash("password should contain atleast one special character")
         else:
@@ -164,7 +164,7 @@ def add_job():
             "image": request.form.get("image_url"),
             "job_type": request.form.get("job_type"),
             "company_name": request.form.get("company_name"),
-            "charge": request.form.get("charge"),
+            "cost": request.form.get("cost"),
             "contact_no": request.form.get("contact_no"),
             "email": request.form.get("email"),
             "description": request.form.get("description"),
@@ -186,7 +186,7 @@ def edit_job(job_id):
             "image": request.form.get("image_url"),
             "job_type": request.form.get("job_type"),
             "company_name": request.form.get("company_name"),
-            "charge": request.form.get("charge"),
+            "cost": request.form.get("cost"),
             "contact_no": request.form.get("contact_no"),
             "email": request.form.get("email"),
             "description": request.form.get("description"),
@@ -209,7 +209,7 @@ def delete_job(job_id):
     return redirect(url_for('account', username=session['user']))
 
 
-# admin access only 
+# admin access only
 @app.route("/manage")
 def manage():
     all_jobs = mongo.db.jobs.find()

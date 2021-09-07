@@ -9,9 +9,9 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="far fa-images prefix"></i>
-                        <input id="image_url" name="image_url"  value="{{ job.image }}" type="text" class="validate" required>
-                        <label for="image_url">Image URL</label>
-                        <small class="center-align red-text" id="error_jobtype"></small>
+                        <input id="img_url" name="img_url"  value="{{ job.image }}" type="text" class="validate" required>
+                        <label for="img_url">Image URL</label>
+                        <small class="center-align red-text" id="error_img_url"></small>
                     </div>
                 </div>
                 <!---job type---->
@@ -21,7 +21,7 @@
                         <input id="job_type" value="{{ job.job_type }}" name="job_type" minlength="5"
                             maxlength="20" type="text" class="validate" required>
                         <label for="job_type">Job type</label>
-                        <small class="center-align red-text" id="error_jobtype"></small>
+                        <small class="center-align red-text" id="error_job_type"></small>
                     </div>
                 </div>
                 <!--company name-->
@@ -31,16 +31,16 @@
                         <input id="company_name"  value="{{ job.company_name }}" name="company_name" minlength="5"
                             maxlength="20" type="text" class="validate" required>
                         <label for="company_name">Company Name</label>
-                        <small class="center-align red-text" id="error_name"></small>
+                        <small class="center-align red-text" id="error_company_name"></small>
                     </div>
                 </div>
-                <!--charge-->
+                <!--cost-->
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col col s12">
                         <i class="fas fa-pound-sign prefix"></i>
-                        <input id="charge"  value="{{ job.charge }}" name="charge" type="tel"
+                        <input id="cost"  value="{{ job.cost }}" name="cost" type="tel"
                              class="validate" required>
-                        <label for="charge">Charge p/h</label>
+                        <label for="cost">Cost p/h</label>
                         <small class="center-align red-text" id="error_cost"></small>
                     </div>
                 </div>
@@ -48,10 +48,10 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="fas fa-phone-alt prefix"></i>
-                        <input id="phone" value="{{ job.contact_no }}"name="phone" type="tel"
+                        <input id="phone" value="{{ job.phone }}"name="phone" type="tel"
                            pattern="[0-9]{11}" class="validate" required>
                         <label for="phone">Contact no</label>
-                        <small class="center-align red-text" id="error_contact"></small>
+                        <small class="center-align red-text" id="error_phone"></small>
                     </div>
                 </div>
                 <!----email---->
@@ -68,12 +68,12 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="fas fa-align-left prefix"></i>
-                        <textarea id="description" name="description"
+                        <textarea id="descc" name="desc"
                             minlength="50" maxlength="250" class="materialize-textarea validate"
                             required>{{ job.description }}"
                         </textarea>
-                        <label for="description">description</label>
-                        <small class="center-align red-text" id="error_des"></small>
+                        <label for="des">description</label>
+                        <small class="center-align red-text" id="error_desc"></small>
                     </div>
                 </div>
                   <!----Edit button--->

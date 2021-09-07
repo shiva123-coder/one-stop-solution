@@ -89,3 +89,8 @@ The surface design of the website will also utilise Materialize CSS to provide a
 ```
 id="job_modal{{ job._id }}
 ```
+
+## Credit
+
+- Thanks to SDTE- Automatopn Techie for [youtube video](https://www.youtube.com/watch?v=mG3aGgFYJSE) on special character vaerification, this video help me to understand the concept of password validation with special character.
+- Thanks to The IT Guy for [youtube video](https://www.youtube.com/watch?v=W4-5WM60gWg&t=121s), this video helped me to understand the input field validation with error message on form. I have also taken some of the code from this video and modified as per my requirement.

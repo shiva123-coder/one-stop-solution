@@ -158,6 +158,27 @@ id="job_modal{{ job._id }}
   - Python tutor was used to visualize the python code and identify any error.
 
 
+## Deployment
+
+I used GitHub for my version control and Heroku to host the live version of my project. To deploy my website to Heroku, I used the following steps:
+
+1. Created the app in Heroku.
+2. Run the `npm install -g heroku` command in the terminal window to instal heroku in my workspace.
+3. Ran the `heroku login -i` command in the terminal window and entered my credentials to login to Heroku.
+4. Added and committed the files to Git using the `git add .` and `git commit -m ""` commands in the terminal window.
+5. Created a requirements.txt file using the following command in the terminal window:
+
+    ```pip3 freeze --local > requirements.txt```
+
+7. Created a Procfile using the following command in the terminal window:
+
+  ```echo web: python <fileName.py> > Procfile```
+
+8. Ran the `git push heroku master` command in the terminal window to push the app to Heroku.
+9. Login to the Heroku page and Entered the following Config Var in Heroku:
+  -  **IP**, **PORT**, **MONGO_URI**, **MONGO_DBNAME**, and **SECRET_KEY** (These will not be published here for security reasons).
+
+
 ## Credit
 
 - Thanks to SDTE- Automatopn Techie for [youtube video](https://www.youtube.com/watch?v=mG3aGgFYJSE) on special character vaerification, this video help me to understand the concept of password validation with special character.

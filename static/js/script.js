@@ -3,7 +3,7 @@ $(document).ready(function(){
       $('.modal').modal();
 
 
-    // concept of validating form input field and showing error message taken from youtube video of The IT guy (https://www.youtube.com/watch?v=W4-5WM60gWg&t=121s)
+    // concept of validating form input field and showing error messagetaken from youtube video of The IT guy (https://www.youtube.com/watch?v=W4-5WM60gWg&t=121s)
     // Some of the codes were also taken and modified as per project requirements
 
       $("#error_img_url").hide();

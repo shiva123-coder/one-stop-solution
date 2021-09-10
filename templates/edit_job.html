@@ -9,7 +9,7 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="far fa-images prefix"></i>
-                        <input id="img_url" name="img_url"  value="{{ job.image }}" type="text" class="validate" required>
+                        <input id="img_url" name="img_url"  value="{{ job.img_url }}" type="text" class="validate" required>
                         <label for="img_url">Image URL</label>
                         <small class="center-align red-text" id="error_img_url"></small>
                     </div>
@@ -18,8 +18,8 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="fas fa-briefcase prefix"></i>
-                        <input id="job_type" value="{{ job.job_type }}" name="job_type" minlength="5"
-                            maxlength="20" type="text" class="validate" required>
+                        <input id="job_type" value="{{ job.job_type }}" name="job_type"
+                            type="text" class="validate" required>
                         <label for="job_type">Job type</label>
                         <small class="center-align red-text" id="error_job_type"></small>
                     </div>
@@ -28,8 +28,8 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="fas fa-building prefix"></i>
-                        <input id="company_name"  value="{{ job.company_name }}" name="company_name" minlength="5"
-                            maxlength="20" type="text" class="validate" required>
+                        <input id="company_name"  value="{{ job.company_name }}" name="company_name" 
+                           type="text" class="validate" required>
                         <label for="company_name">Company Name</label>
                         <small class="center-align red-text" id="error_company_name"></small>
                     </div>
@@ -48,8 +48,8 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="fas fa-phone-alt prefix"></i>
-                        <input id="phone" value="{{ job.phone }}"name="phone" type="tel"
-                           pattern="[0-9]{11}" class="validate" required>
+                        <input id="phone" value="{{ job.phone }}" name="phone" type="tel"
+                           class="validate" required>
                         <label for="phone">Contact no</label>
                         <small class="center-align red-text" id="error_phone"></small>
                     </div>
@@ -68,11 +68,11 @@
                 <div class="row col s12 col m8 offset-l2 col l8">
                     <div class="input-field col s12">
                         <i class="fas fa-align-left prefix"></i>
-                        <textarea id="descc" name="desc"
-                            minlength="50" maxlength="250" class="materialize-textarea validate"
-                            required>{{ job.description }}"
+                        <textarea id="desc" name="desc"
+                            class="materialize-textarea validate"
+                            required>{{ job.desc }}"
                         </textarea>
-                        <label for="des">description</label>
+                        <label for="desc">description</label>
                         <small class="center-align red-text" id="error_desc"></small>
                     </div>
                 </div>

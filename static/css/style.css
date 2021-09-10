@@ -68,7 +68,17 @@ body{
     font-size: 18px;
 }
 
+/*---------login page ----------*/
+.card-login{
+    background-color: #e5d9914d !important;
+}
+
+
 /*------register page -----*/
+
+.card-register{
+    background-color: #ffffff !important;
+}
 
 .input-row{
     margin-top: 9.8%;

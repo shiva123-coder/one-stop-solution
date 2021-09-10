@@ -90,6 +90,74 @@ The surface design of the website will also utilise Materialize CSS to provide a
 id="job_modal{{ job._id }}
 ```
 
+## Technologies Used
+
+### Languages:
+- [Python](https://www.python.org/)
+    - I have used  **Python** as the back-end programming language for my project.
+- [HTML](en.wikipedia.org/wiki/HTML)
+    - I have used **HTML** as the main structural element of my project.
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+    - The project uses **CSS** to style and theme pages..
+ - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+    - The project uses **Javascript** to allow for DOM manipulation.
+
+### Frameworks, Libraries, Programme and Resources Used:  
+- [JQuery](https://jquery.com)
+  - The project uses **jQuery** as the primary JavaScript functionality. This is both the standard jQuery that is built with Materialize components, and my custom jQuery used in my script.js file.        
+- [Flask](http://flask.palletsprojects.com/en/1.1.x/)
+  - The project uses **Flask**, which is a Python microframework. **Flask** help to dynamically generate pages, generate dynamic links, and content within the application.
+- [PyMongo](https://api.mongodb.com/python/current/)
+    - The project uses **PyMongo** as the Python API for MongoDB. This API enables linking the data from the back-end database to the front-end app.
+- [Materialize](https://materializecss.com/)
+    - The project uses the **Materialize** framework to simplify the structure of the website and make the website responsive easily.
+- [MongoDB](https://www.mongodb.com/)
+    - The project uses *** MongoDB *** to store the database in the cloud. The information displayed in the front-end is pulled from the database store.
+- [Jinja](https://jinja.palletsprojects.com/en/2.10.x/)
+  - Jinja templating language was used with flask in the HTML code. Jinja was used simplify my HTML code, avoid repetition, and allow simpler linking of the back-end to the front-end.
+- [Google Fonts:](https://fonts.google.com/)
+    - Google font was used to embed the YuseiMagic and Ovo types font which are used on all pages throughout the website.
+- [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome was used to add icons for aesthetic and UX purposes.
+- [Balsamiq:](https://balsamiq.com/)
+    - Balsamiq was used to create the wireframes during the design process.
+- [Gitpod](https://www.gitpod.io/)
+    - Gitpod was used as IDE for local development.
+- [GitHub](https://github.com/)
+    - GitHub was used to store the projects code after being pushed from Gitpod.
+- [Git](https://git-scm.com/)
+  - Git was used as aversion control system to regularly and add commit changes made to project and pushing them to GitHub
+- [Heroku](https://id.heroku.com/login)
+  - Heroku was used as the hosting platform to deploy my project.
+- [HTML Formatter](https://htmlformatter.com/) 
+    - HTML formatter was used to format HTML code
+- [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln/related) 
+    - Unicorn Revealer tool was used to identify any overflow issues
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+    - Lighthouse was used to test the performance and loading speed of the website
+- [W3.CSS](https://www.w3schools.com/w3css/defaulT.asp) 
+    - General resources.
+- [Stack Overflow](https://pt.stackoverflow.com/)
+    - General resources.
+- [Youtube](https://www.youtube.com/) 
+   - General resources.
+- Code Institute SLACK Community
+   -General resources
+
+### Code Validation
+
+- [W3C Markup Validation](https://validator.w3.org/#validate_by_input) 
+  - W3C Markup Validation was used throughout the process to validate HTML codes
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) 
+  - W3C CSS Validation was used to vaildate CSS codes
+- [JSHINT](https://jshint.com/) 
+  - JSHINT was used for JavaScript code warning & error check.
+- [PEP8 online](http://pep8online.com/)
+  - PEP8 online tool was used to ensure all python codes on projects are PEP8 compliant.
+- [Python Tutor](https://pythontutor.com/visualize.html#mode=edit)
+  - Python tutor was used to visualize the python code and identify any error.
+
+
 ## Credit
 
 - Thanks to SDTE- Automatopn Techie for [youtube video](https://www.youtube.com/watch?v=mG3aGgFYJSE) on special character vaerification, this video help me to understand the concept of password validation with special character.

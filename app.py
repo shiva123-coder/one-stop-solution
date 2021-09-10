@@ -116,7 +116,7 @@ def register():
             flash(" Registration Successful!")
         return redirect(url_for("register"))
 
-        register = {
+        register= {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
@@ -133,19 +133,27 @@ def register():
 # user profile page
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
-    # retreive only username from database
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    if "user" in session:
+        current_user = mongo.db.users.find_one({"_id": ObjectId()})
+        job_creator = mongo.db.jobs.find_one({"added_by": "user"})
+        if current_user == job_creator:
+            # retreive only username from database
+            username = mongo.db.users.find_one(
+                {"username": session["user"]})["username"]
 
-    # retrive job details created by user
-    services = list(mongo.db.jobs.find(
-        {"added_by": session["user"]}))   
+            # retrive job details created by user
+            services = list(mongo.db.jobs.find(
+                {"added_by": session["user"]}))   
 
-    if session["user"]:
-        return render_template(
-            "account.html", username=username, services=services)
-
-    return redirect(url_for("login"))
+    
+            return render_template(
+                "account.html", username=username, services=services)
+        else:
+            flash("You are not authorised to view this page")
+            return redirect(url_for("login"))
+    else:
+        flash("You must be logged in to view this page")
+        return redirect(url_for("login"))
 
 
 @app.route("/logout")
@@ -159,54 +167,88 @@ def logout():
 # add new job to the page
 @app.route("/add_job", methods=["GET", "POST"])
 def add_job():
-    if request.method == "POST":
-        job = {
-            "image": request.form.get("image_url"),
-            "job_type": request.form.get("job_type"),
-            "company_name": request.form.get("company_name"),
-            "cost": request.form.get("cost"),
-            "contact_no": request.form.get("contact_no"),
-            "email": request.form.get("email"),
-            "description": request.form.get("description"),
-            "added_by": session["user"]
-        }
-        mongo.db.jobs.insert_one(job)
-        flash("Job successfully added")
-        return redirect(url_for("home"))
+    if "user" in session:
+        current_user = mongo.db.users.find_one({"_id": ObjectId()})
+        job_creator = mongo.db.jobs.find_one({"added_by": "user"})
+        if current_user == job_creator or current_user == "admin":
+            if request.method == "POST":
+                job = {
+                    "img_url": request.form.get("img_url"),
+                    "job_type": request.form.get("job_type"),
+                    "company_name": request.form.get("company_name"),
+                    "cost": request.form.get("cost"),
+                    "phone": request.form.get("phone"),
+                    "email": request.form.get("email"),
+                    "desc": request.form.get("desc"),
+                    "added_by": session["user"]
+                }
+                mongo.db.jobs.insert_one(job)
+                flash("Job successfully added")
+                return redirect(url_for("home"))
+        else:
+            flash("You are not authorised to add new job")
+            return redirect(url_for("login"))
 
-    selections = mongo.db.jobs.find()
-    return render_template("add_job.html", selections=selections)
+        selections = mongo.db.jobs.find()
+        return render_template("add_job.html", selections=selections)
+    else:
+        flash("You must be logged in to view this page")
+        return redirect(url_for("login"))
+
 
    
 # edit job
 @app.route("/edit_job/<job_id>", methods=["GET", "POST"])
-def edit_job(job_id):        
-    if request.method == "POST":
-        send = {
-            "image": request.form.get("image_url"),
-            "job_type": request.form.get("job_type"),
-            "company_name": request.form.get("company_name"),
-            "cost": request.form.get("cost"),
-            "contact_no": request.form.get("contact_no"),
-            "email": request.form.get("email"),
-            "description": request.form.get("description"),
-            "added_by": session["user"]
-        }
-        mongo.db.jobs.update({"_id": ObjectId(job_id)}, send)
-        flash("Job successfully updated")
-        return redirect(url_for('account', username=session['user']))
+def edit_job(job_id):
+    if "user" in session:
+        current_user = mongo.db.users.find_one({"_id": ObjectId()})
+        job_creator = mongo.db.jobs.find_one({"added_by": "user"})
+        if current_user == job_creator or current_user == "admin":
+            if request.method == "POST":
+                send = {
+                    "img_url": request.form.get("img_url"),
+                    "job_type": request.form.get("job_type"),
+                    "company_name": request.form.get("company_name"),
+                    "cost": request.form.get("cost"),
+                    "phone": request.form.get("phone"),
+                    "email": request.form.get("email"),
+                    "desc": request.form.get("desc"),
+                    "added_by": session["user"]
+                }
+                mongo.db.jobs.update({"_id": ObjectId(job_id)}, send)
+                flash("Job successfully updated")
+                return redirect(url_for('account', username=session['user']))
         
-    job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
-    selections = mongo.db.jobs.find()
-    return render_template("edit_job.html", job=job, selections=selections)
+            job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
+            selections = mongo.db.jobs.find()
+            return render_template("edit_job.html", job=job, selections=selections)
+
+        else:
+            flash("You are not authorised to edit this job")
+            return redirect(url_for("login"))
+    else:
+            flash("You must be logged in to view this page")
+            return redirect(url_for("login"))
+    
     
 
 # delete job from account
 @app.route("/delete_job/<job_id>")
 def delete_job(job_id):
-    mongo.db.jobs.remove({"_id": ObjectId(job_id)})
-    flash("Delete request has now Completed")
-    return redirect(url_for('account', username=session['user']))
+    if "user" in session:
+        current_user = mongo.db.users.find_one({"_id": ObjectId()})
+        job_creator = mongo.db.jobs.find_one({"added_by": "user"})
+        if current_user == job_creator or current_user == "admin":
+            mongo.db.jobs.remove({"_id": ObjectId(job_id)})
+            flash("Delete request has now Completed")
+            return redirect(url_for('account', username=session['user']))
+        else:
+            flash("You are not authorise to perform this action")
+            return redirect(url_for("login"))
+    else:
+        flash("You must be logged in to view this page")
+        return redirect(url_for("login"))
+
 
 
 # admin access only

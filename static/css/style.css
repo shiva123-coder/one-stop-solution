@@ -27,6 +27,15 @@ body{
     font-style: italic;
 }
 
+
+.btn-search{
+    color: #26a69a;
+}
+
+.btn-home{
+    margin: 5px;
+}
+
 .hero-image{
     height: 250px;
     }

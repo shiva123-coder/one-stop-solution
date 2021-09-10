@@ -176,7 +176,7 @@ I used GitHub for my version control and Heroku to host the live version of my p
 
 8. Ran the `git push heroku master` command in the terminal window to push the app to Heroku.
 9. Login to the Heroku page and Entered the following Config Var in Heroku:
-  -  **IP**, **PORT**, **MONGO_URI**, **MONGO_DBNAME**, and **SECRET_KEY** (These will not be published here for security reasons).
+   **IP**, **PORT**, **MONGO_URI**, **MONGO_DBNAME**, and **SECRET_KEY** (These will not be published here for security reasons).
 
 
 ## Credit

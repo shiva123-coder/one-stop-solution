@@ -26,7 +26,25 @@ mongo = PyMongo(app)
 def home():
     jobs = mongo.db.jobs.find()
     return render_template("home.html", jobs=jobs)
-    
+
+
+# search functionality
+"""
+code taken from walkthrough project of CI
+and modified as per project requirement
+--start--
+"""
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    jobs = list(mongo.db.jobs.find({"$text": {"$search": query}}))
+    return render_template("home.html", jobs=jobs)
+"""
+code taken from walkthrough project of CI
+and modified as per project requirement
+--End--
+"""
+
 
 # user login page
 @app.route("/login", methods=["GET", "POST"])
@@ -40,10 +58,10 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for("account", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for("account", username=session["user"]))
             else:
                 # invalid password
                 flash("Incorrect Username and/or Password")
@@ -116,7 +134,7 @@ def register():
             flash(" Registration Successful!")
         return redirect(url_for("register"))
 
-        register= {
+        register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
@@ -162,7 +180,7 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-    
+
 
 # add new job to the page
 @app.route("/add_job", methods=["GET", "POST"])
@@ -196,7 +214,6 @@ def add_job():
         return redirect(url_for("login"))
 
 
-   
 # edit job
 @app.route("/edit_job/<job_id>", methods=["GET", "POST"])
 def edit_job(job_id):

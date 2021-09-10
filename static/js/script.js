@@ -6,7 +6,7 @@ $(document).ready(function(){
     // concept of validating form input field and showing error messagetaken from youtube video of The IT guy (https://www.youtube.com/watch?v=W4-5WM60gWg&t=121s)
     // Some of the codes were also taken and modified as per project requirements
 
-    // hide all error message on input field and only show once the if statement inside the function execute.
+    // hide all error message on input field and only show once if statement inside each function run.
       $("#error_img_url").hide();
       $("#error_job_type").hide();
       $("#error_company_name").hide();
@@ -128,6 +128,7 @@ $(document).ready(function(){
       // URL must be start with https://
       function validate_img_url() {
             var img_url = $('#img_url').val();
+            console.log(img_url);
             if (img_url && !img_url.match(/^http([s]?):\/\/.*/)) {
                   $("#error_img_url").html("*Please provide valid url");
                   $("#error_img_url").show();
@@ -142,6 +143,7 @@ $(document).ready(function(){
       // validate description field in the form and show error message if length of input field is not within the range of 20 and 250
       function validate_desc() {
         var desc_length = $('#desc').val().length;
+        console.log(desc_length);
         if ( desc_length < medLength || desc_length > maxlength){
               $("#error_desc").html("*Minimum 20 and Max 250 Characters allowed");
               $("#error_desc").show();

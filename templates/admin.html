@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<h3 class="center-align">Welcome to OSS Limited, <small class="slogan">one platform for all solutions</small></h3>
+<h3 class="center-align">Welcome Admin, <small class="slogan">View and delete the jobs</small></h3>
 
       <div class="row">
         {% for job in jobs %}
@@ -17,8 +17,12 @@
                 </div>
                 <div class="card-body">
                   <a class="waves-effect waves-light white black-text btn modal-trigger"
-                    href="#job_modal{{ job._id }}">{{ job.job_type }}
-                    <i class="fas fa-mouse"></i>
+                    href="#job_modal{{ job._id }}">View
+                    <i class="fas fa-eye"></i>
+                  </a>
+                  <a class="waves-effect waves-light white black-text btn modal-trigger"
+                    href="{{ url_for('delete_job_by_admin', job_id=job._id) }}">Delete
+                    <i class="fas fa-trash-alt"></i>
                   </a>
                 </div>
               </div>

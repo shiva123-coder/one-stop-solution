@@ -170,7 +170,7 @@ def add_job():
     if "user" in session:
         current_user = mongo.db.users.find_one({"_id": ObjectId()})
         job_creator = mongo.db.jobs.find_one({"added_by": "user"})
-        if current_user == job_creator or current_user == "admin":
+        if current_user == job_creator:
             if request.method == "POST":
                 job = {
                     "img_url": request.form.get("img_url"),
@@ -203,7 +203,7 @@ def edit_job(job_id):
     if "user" in session:
         current_user = mongo.db.users.find_one({"_id": ObjectId()})
         job_creator = mongo.db.jobs.find_one({"added_by": "user"})
-        if current_user == job_creator or current_user == "admin":
+        if current_user == job_creator:
             if request.method == "POST":
                 send = {
                     "img_url": request.form.get("img_url"),
@@ -232,13 +232,14 @@ def edit_job(job_id):
     
     
 
-# delete job from account
+# user to delete their job from page
+# user can only delete their own job
 @app.route("/delete_job/<job_id>")
 def delete_job(job_id):
     if "user" in session:
         current_user = mongo.db.users.find_one({"_id": ObjectId()})
         job_creator = mongo.db.jobs.find_one({"added_by": "user"})
-        if current_user == job_creator or current_user == "admin":
+        if current_user == job_creator:
             mongo.db.jobs.remove({"_id": ObjectId(job_id)})
             flash("Delete request has now Completed")
             return redirect(url_for('account', username=session['user']))
@@ -250,12 +251,27 @@ def delete_job(job_id):
         return redirect(url_for("login"))
 
 
+# admin to delete job from the page
+# admin can delete job that added by any user too
+@app.route("/delete_job_by_admin/<job_id>")
+def delete_job_by_admin(job_id):
+    if "user" in session :
+        # main_user = mongo.db.users.find_one({"_id": ObjectId()})
+        # admin_user = mongo.db.jobs.find_one({"added_by": "admin"})
+        # if main_user == admin_user:
+            mongo.db.jobs.remove({"_id": ObjectId(job_id)})
+            flash("Delete request has now Completed")
+            return redirect(url_for('admin'))
+    else:
+        flash("You are not authorise to perform this action")
+        return redirect(url_for("login"))
+    
 
 # admin access only
-@app.route("/manage")
-def manage():
+@app.route("/admin")
+def admin():
     all_jobs = mongo.db.jobs.find()
-    return render_template("manage.html", jobs=all_jobs)
+    return render_template("admin.html", jobs=all_jobs)
 
 
 if __name__ == "__main__":

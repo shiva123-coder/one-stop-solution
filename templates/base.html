@@ -33,7 +33,7 @@
             <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
             <li><a href="{{ url_for('add_job') }}">Add new job</a></li>
             {% if session.user|lower == "admin"|lower %}
-            <li><a href="{{ url_for('manage') }}">Admin</a></li>
+            <li><a href="{{ url_for('admin') }}">View/Delete</a></li>
           {% endif %}
           {% else %}
             <li><a href="{{ url_for('login') }}">Login</a></li>
@@ -50,7 +50,7 @@
           <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
           <li><a href="{{ url_for('add_job') }}" >Add new job</a></li>
           {% if session.user|lower == "admin"|lower %}
-            <li><a href="{{ url_for('manage') }}">Admin</a></li>
+            <li><a href="{{ url_for('admin') }}">View/Delete</a></li>
           {% endif %}
           
       {% else %}

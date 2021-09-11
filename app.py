@@ -139,7 +139,7 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
             }
-            
+
             mongo.db.users.insert_one(register)
             flash(" Registration Successful!")
             return redirect(url_for("register"))
@@ -290,8 +290,18 @@ def delete_job_by_admin(job_id):
 # admin access only
 @app.route("/admin")
 def admin():
-    all_jobs = mongo.db.jobs.find()
-    return render_template("admin.html", jobs=all_jobs)
+    if "user" in session:
+        current_user = mongo.db.users.find_one({"_id": ObjectId()})
+        job_creator = mongo.db.jobs.find_one({"added_by": "user"})
+        if current_user == job_creator:
+            all_jobs = mongo.db.jobs.find()
+            return render_template("admin.html", jobs=all_jobs)
+        else:
+            flash("You are not authorise to perform this action")
+            return redirect(url_for("login"))
+    else:
+        flash("You must be logged in to view this page")
+        return redirect(url_for("login"))
 
 
 if __name__ == "__main__":

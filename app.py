@@ -247,8 +247,8 @@ def edit_job(job_id):
             flash("You are not authorised to edit this job")
             return redirect(url_for("login"))
     else:
-            flash("You must be logged in to view this page")
-            return redirect(url_for("login"))
+        flash("You must be logged in to view this page")
+        return redirect(url_for("login"))
     
     
 
@@ -276,9 +276,6 @@ def delete_job(job_id):
 @app.route("/delete_job_by_admin/<job_id>")
 def delete_job_by_admin(job_id):
     if "user" in session :
-        # main_user = mongo.db.users.find_one({"_id": ObjectId()})
-        # admin_user = mongo.db.jobs.find_one({"added_by": "admin"})
-        # if main_user == admin_user:
             mongo.db.jobs.remove({"_id": ObjectId(job_id)})
             flash("Delete request has now Completed")
             return redirect(url_for('admin'))
@@ -292,8 +289,8 @@ def delete_job_by_admin(job_id):
 def admin():
     if "user" in session:
         current_user = mongo.db.users.find_one({"_id": ObjectId()})
-        job_creator = mongo.db.jobs.find_one({"added_by": "user"})
-        if current_user == job_creator:
+        admin_user = mongo.db.jobs.find_one({"added_by": "user"})
+        if current_user == admin_user:
             all_jobs = mongo.db.jobs.find()
             return render_template("admin.html", jobs=all_jobs)
         else:
@@ -308,5 +305,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
     debug=True)                              # Note : Debug value must be set to false once project completed
-
-

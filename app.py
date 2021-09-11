@@ -34,6 +34,8 @@ code taken from walkthrough project of CI
 and modified as per project requirement
 --start--
 """
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -119,7 +121,9 @@ def register():
         """
         check wether password contain atleast one
         special character or not and display flash
-        message accordingly.
+        message accordingly. if condition satisfied
+        value will be stored in dict format and will
+        be stored to users collection in database
 
         concept of validating special character was taken from youtube
         video of SDTE- Automatopn Techie (
@@ -131,14 +135,14 @@ def register():
         if(char.search(password_supplied) == None):
             flash("password should contain atleast one special character")
         else:
-            flash(" Registration Successful!")
-        return redirect(url_for("register"))
-
-        register = {
+            register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(register)
+            }
+            
+            mongo.db.users.insert_one(register)
+            flash(" Registration Successful!")
+            return redirect(url_for("register"))
 
         # put new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
@@ -163,7 +167,6 @@ def account(username):
             services = list(mongo.db.jobs.find(
                 {"added_by": session["user"]}))   
 
-    
             return render_template(
                 "account.html", username=username, services=services)
         else:
@@ -293,7 +296,7 @@ def admin():
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-    port= int(os.environ.get("PORT")),
+    port=int(os.environ.get("PORT")),
     debug=True)                              # Note : Debug value must be set to false once project completed
 
 

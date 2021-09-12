@@ -97,7 +97,7 @@ def register():
         and redirect user to registration page again
         """
         if len(request.form.get("username")) not in range(5, 13):
-            flash (
+            flash(
                 "username should be between 5-12 character, please try again")
             return redirect(url_for("register"))
 
@@ -275,10 +275,10 @@ def delete_job(job_id):
 # admin can delete job that added by any user too
 @app.route("/delete_job_by_admin/<job_id>")
 def delete_job_by_admin(job_id):
-    if "user" in session :
-            mongo.db.jobs.remove({"_id": ObjectId(job_id)})
-            flash("Delete request has now Completed")
-            return redirect(url_for('admin'))
+    if "user" in session:
+        mongo.db.jobs.remove({"_id": ObjectId(job_id)})
+        flash("Delete request has now Completed")
+        return redirect(url_for('admin'))
     else:
         flash("You are not authorise to perform this action")
         return redirect(url_for("login"))

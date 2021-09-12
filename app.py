@@ -193,19 +193,19 @@ def add_job():
         job_creator = mongo.db.jobs.find_one({"added_by": "user"})
         if current_user == job_creator:
             if request.method == "POST":
-                job = {
-                    "img_url": request.form.get("img_url"),
-                    "job_type": request.form.get("job_type"),
-                    "company_name": request.form.get("company_name"),
-                    "cost": request.form.get("cost"),
-                    "phone": request.form.get("phone"),
-                    "email": request.form.get("email"),
-                    "desc": request.form.get("desc"),
-                    "added_by": session["user"]
-                }
-                mongo.db.jobs.insert_one(job)
-                flash("Job successfully added")
-                return redirect(url_for("home"))
+                    job = {
+                        "img_url": request.form.get("img_url"),
+                        "job_type": request.form.get("job_type"),
+                        "company_name": request.form.get("company_name"),
+                        "cost": request.form.get("cost"),
+                        "phone": request.form.get("phone"),
+                        "email": request.form.get("email"),
+                        "desc": request.form.get("desc"),
+                        "added_by": session["user"]
+                    }
+                    mongo.db.jobs.insert_one(job)
+                    flash("Job successfully added")
+                    return redirect(url_for("home"))
         else:
             flash("You are not authorised to add new job")
             return redirect(url_for("login"))

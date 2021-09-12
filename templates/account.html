@@ -24,9 +24,8 @@
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <a class="waves-effect waves-light white black-text btn modal-trigger"
-                                    href="{{ url_for('delete_job', job_id=service._id) }}">Delete
-                                    <i class="fas fa-trash-alt"></i>
-                                </a>
+                                href="#job_modal1">Delete
+                                <i class="fas fa-mouse"></i></a>
                           
                             </div>
                         </div>
@@ -34,6 +33,18 @@
                 </div>
             </div>
         </div>
+        <div id="job_modal1" class="modal">
+            <div class="modal-content">
+              <h4 class="center-align">Our details</h4>
+              <p>Are you sure you want to delete the job ?
+                  <small>It cannot be recover once deleted</small>            
+             </p>
+            </div>
+            <div class="modal-footer">
+              <a href="{{ url_for('delete_job', job_id=service._id) }}" class="modal-close waves-effect waves-light grey black-text btn">Conform</a>
+              <a href="#" class="modal-close waves-effect waves-light grey black-text btn">Cancel</a>
+            </div>
+          </div>
 
         {% endif %}
     {% endfor %}

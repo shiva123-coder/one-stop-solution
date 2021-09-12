@@ -22,45 +22,44 @@
       </form>
     </div>
 
-      <div class="row">
-        {% for job in jobs %}
-          <div class="col s12 m6 xl4">
-            <div class="container">
-              <div class="row card-row">
+     
+       
+         
+        <div class="row">
+          {% for job in jobs %}
+              <div class="col s12 m6">
                 <div class="card">
-                  <div class="card-header">
-                    <div class="card-image">
-                      <img src="{{ job.img_url }}" alt="job-image" class="hero-image">
-                    </div>
+                  <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title">Card Title</span>
                   </div>
-                  <div class="card-body">
-                    <a class="waves-effect waves-light white black-text btn modal-trigger"
-                      href="#job_modal{{ job._id }}">{{ job.job_type }}
-                      <i class="fas fa-mouse"></i>
-                    </a>
+                  <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">This is a link</a>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!------Modal--- -->
-          <div id="job_modal{{ job._id }}" class="modal">
-            <div class="modal-content">
-              <h4 class="center-align">Our details</h4>
-              <p>Company Name : {{ job.company_name }} <br>
-                Callout Cost : {{ job.cost }} <br>
-                Contact no. :  {{ job.phone }} <br>
-                Email : {{ job.email }}<br>
-                Added by : {{ job.added_by }} <br><br><br>
-                {{ job.desc }}                
-            </p>
+            <!------Modal--- -->
+            <div id="job_modal{{ job._id }}" class="modal">
+              <div class="modal-content">
+                <h4 class="center-align">Our details</h4>
+                <p>Company Name : {{ job.company_name }} <br>
+                  Callout Cost : {{ job.cost }} <br>
+                  Contact no. : {{ job.phone }} <br>
+                  Email : {{ job.email }}<br>
+                  Added by : {{ job.added_by }} <br><br><br>
+                  {{ job.desc }}
+                </p>
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="modal-close waves-effect waves-light grey black-text btn">Cancel</a>
+              </div>
             </div>
-            <div class="modal-footer">
-              <a href="#" class="modal-close waves-effect waves-light grey black-text btn">Cancel</a>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
+          {% endfor %}
+        </div>
 
 {% endblock %}
-

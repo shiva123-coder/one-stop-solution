@@ -144,11 +144,11 @@ def register():
             flash(" Registration Successful!")
             return redirect(url_for("register"))
 
-        # put new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Registration Successful")
-        return redirect(url_for(
-            "account", username=session["user"]))
+            # put new user into 'session' cookie
+            session["user"] = request.form.get("username").lower()
+            flash("Registration Successful")
+            return redirect(url_for(
+                "account", username=session["user"]))
     return render_template("register.html")
 
 

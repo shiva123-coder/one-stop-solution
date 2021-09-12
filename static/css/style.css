@@ -35,14 +35,20 @@ body{
 .btn-home{
     margin: 5px;
 }
+/* 
+.card-header{
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+}
 
-.hero-image {
+
+.card-header img {
     display: block;
     border-radius: 2px 2px 0 0;
     position: relative;
     left: 0;
     right: 0;
-    top: 0;
     bottom: 0;
     width: 100%;
     min-width: 100%;
@@ -55,29 +61,33 @@ body{
     justify-content: center;
 }
 
+.card-hero{
+    margin: 50px auto;
+}
+
+
 .container{
     width: 90%;
     margin: 50px auto;
 }
 
-/* .heading{
+.heading{
     text-align: center;
     font-size: 30px;
     margin-bottom: 50px;
-} */
+} 
 
 .card-row{
     margin-bottom: 50px;
-
 }
 
-.card{
+ .card{
     width: 100%;
     background-color: aqua;
     border: 1px solid #ccc;
     margin-bottom: 50px;
     transition: 0.9s;
-}
+} 
 
 .card-header{
     text-align: center;
@@ -90,7 +100,7 @@ body{
     padding: 30px 20px;
     text-align: center;
     font-size: 18px;
-}
+} */
 
 /*---------login page ----------*/
 .card-login{
@@ -144,3 +154,7 @@ body{
         margin-bottom: 11%;
     }
 }
+
+
+
+/*----------------------Test*/

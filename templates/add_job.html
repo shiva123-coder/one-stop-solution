@@ -3,7 +3,7 @@
 
     <h3 class="center-align">Add new job</h3>
 
-        <div class="row card-panel light-grey">
+        <div class="row card-panel card-panel-form">
             <form class="col s12 new-form" method="POST" action="{{ url_for('add_job') }}">
                 <!----image----->
                 <div class="row">
@@ -68,9 +68,7 @@
                 <div class="row ">
                     <div class="input-field col s12 offset-m2 m8 offset-l3 l6">
                         <i class="fas fa-align-left prefix"></i>
-                        <textarea id="desc" name="desc" class="materialize-textarea validate"
-                            required>
-                        </textarea>
+                        <textarea id="desc" name="desc" class="materialize-textarea validate" required></textarea>
                         <label for="desc">description</label>
                         <small class="center-align red-text" id="error_desc"></small>
                     </div>

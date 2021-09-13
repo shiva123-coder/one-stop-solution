@@ -103,6 +103,22 @@ id="job_modal{{ job._id }}
 - I encountered further issue with responsiveness on the card and images on all of my pages as they were not responsive and also whitespace were not utilized properly when viewing on different screensizes
   - I decided to restructure my HTML codes for card and images and checking step by step during build process which gave proved to be an easier way to find the problem and additionally I did depth research to understand offset class on grid layout which I finally understood clearly and at the end restructring HTML codes and utilizing materalize offset class solved my problem.
 
+- There was an issue with form validation on my page, each input field was expected to validate using javascript/jQuery validation however textarea input did not validate.
+  - When I move my cursor to input field, it was already in the middle of the textarea and not in the beginning however couldnt figured out why there was space, I checked all the codes and possible whitespace but nothing was there then finally I have found the solution of this on StackOverflow. Indeed there was a space before closing textarea tag on my HTML however this was not easily noticable due to indentation issue, I then had to remove the whitespace before closing textarea tag and move this one line up to resolve this issue.
+    - BEFORE 
+      ```
+      <textarea id="desc" name="desc" class="materialize-textarea validate"
+            required>
+      </textarea>
+
+      ```
+    - AFTER
+      ```
+        <textarea id="desc" name="desc" class="materialize-textarea validate" required></textarea>
+        
+      ```
+
+
 ## Technologies Used
 
 ### Languages:

@@ -74,28 +74,9 @@
   {% block content %}
   {% endblock %}
   
-  <div id="footer">
-    <div class="container footer-container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">One Stop Solution Limited</h5>
-          <p class="grey-text text-lighten-4">Committed to serve local community since 2021.</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Quick Links Here!</h5>
-          <ul>
-            <li><a href="{{ url_for('home') }}" class="white-text">Home</a></li>
-            <li><a href="{{ url_for('login') }}" class="white-text">Login</a></li>
-            <li><a href="{{ url_for('register') }}" class="white-text">Register</a></li>
-          </ul>
-        </div>
+  <div id="footer" class="center-align">
+      <p class="footer-text">&copy; Shiva Neupane, 2021</p> 
       </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container footer-container-sub center-align">
-      Contents of this webiste is copyright of Shiva Neupane, on behalf of OSS limited , UK 
-      </div>
-    </div>
   </div>
       
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"

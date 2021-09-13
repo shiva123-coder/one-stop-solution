@@ -7,11 +7,13 @@ html{
 }
 
 body{
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     font-size: 1rem;
     line-height: 1.5;
-    overflow-x: hidden; 
+    overflow-x: hidden;
+    position: relative;
 }
 
 /* -----navbar----*/
@@ -56,7 +58,7 @@ body{
 }
 
 .image-head{
-    height: 350px;
+    /* height: 350px; */
     padding: 0;
 }
 
@@ -81,9 +83,9 @@ body{
     background-color: #ffffff !important;
 }
 
-.input-row{
+/* .input-row{
     margin-top: 9.8%;
-}
+} */
 
 .main-heading{
     margin-top: 5%;
@@ -156,36 +158,82 @@ border-top: 1px solid #d8abab;
 /* ------- footer ------*/
 #footer{
     background: linear-gradient(to right, #a06529f7, #da3434);
-    left: 0;
+    /* left: 0; */
     bottom: 0;
     width: 100vw;
+    height: 5vh;
+    /* margin-top: auto; */
+    position: absolute;
 }
 
+.footer-text{
+    color: #fff;
+    font-weight:500;
+}
 /*----media screen ---*/
 
 @media screen and (min-width:1200){
-
+    .main-heading{
+        margin-top: 15%;
+        margin-bottom: 5%;
+    }
+    
 }
 
-@media screen and (max-width:992px){
+@media screen and (min-width:768px){
+    .main-heading{
+        margin-top: 15%;
+        margin-bottom: 5%;
+    }
+    
+}
 
+@media screen and (min-width:992px){
+    .main-heading{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1024px) {
+    .main-heading{
+        margin-top: 32%;
+    }
+   
 }
 
 @media screen and (max-width:768px){
-
-}
-
-
-@media (min-width:1024px) and (max-width:1024px) {
     .main-heading{
         margin-top: 25%;
         margin-bottom: 5%;
     }
     
 }
-    
+
 
 @media screen and (max-width:576px){
+    .main-heading{
+        margin-top: 40%;
+    }
+}
 
+
+@media screen and (max-width:330px){
+    .main-heading{
+        margin-top: 10%;
+        padding-bottom: 20%;
+    }
+
+    .text-info{
+        padding-bottom: 20%;
+    }
+
+    #footer{
+        height: 9vh;
+    }
+
+    .footer-text{
+        padding-bottom: 2%;
+    }
 }
 

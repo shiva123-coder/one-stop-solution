@@ -93,6 +93,50 @@ body{
     margin: 5px;
 }
 
+/*--------modal----*/
+
+.modal .modal-content {
+    padding: 24px;
+    background: honeydew;
+    
+}
+
+.modal .modal-footer {
+    text-align: center;
+}
+
+.job-info-head{
+    font-weight: 700;
+    color: darkblue;
+}
+
+.job-info-sub{
+    font-weight: 500;
+    color: brown;
+    font-style: italic;
+}
+
+.btn-modal{
+    align-items: center;
+}
+
+.text-warning-head{
+    color: #ef5350;
+    font-weight: 700;
+}
+
+.text-warning-sub{
+    color: rgb(50, 17, 236);
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+/*---- modal (admin-page)-----*/
+.lighten-5{
+border-top: 1px solid #d8abab;
+}
+
 /* ------- footer ------*/
 .page-footer{
     background: linear-gradient(to right, #a06529f7, #da3434);

@@ -43,16 +43,17 @@
               <div id="job_modal{{ job._id }}" class="modal">
                 <div class="modal-content">
                   <h4 class="center-align">Our details</h4>
-                  <p>Company Name : {{ job.company_name }}<br>
-                    Callout Cost : {{ job.cost }}<br>
-                    Contact no. : {{ job.contact_no }}<br>
-                    Email : {{ job.email }}<br>
-                    Added by : {{ job.added_by }}<br>
-                    info : {{ job.desc }}
+                  <p class="job-info">
+                    <span class="job-info-head">Company Name: </span><span class="job-info-sub">{{ job.company_name }}</span><br>
+                    <span class="job-info-head">Callout Cost: </span><span class="job-info-sub">{{ job.cost }}</span><br>
+                    <span class="job-info-head">Contact no: </span><span class="job-info-sub">{{ job.contact_no }}</span><br>
+                    <span class="job-info-head">Email: </span><span class="job-info-sub">{{ job.email }}</span><br>
+                    <span class="job-info-head">Added by: </span><span class="job-info-sub">{{ job.added_by }}</span><br><br><br>
+                    <span class="job-info-sub">{{ job.desc }}</span>
                   </p>
                 </div>
-                <div class="modal-footer">
-                  <a href="#" class="modal-close waves-effect waves-light grey black-text btn">Cancel</a>
+                <div class="modal-footer red lighten-2">
+                  <a href="#" class="modal-close white black-text btn btn-modal">Cancel</a>
                 </div>
               </div>
         {% endfor %}

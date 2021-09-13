@@ -36,7 +36,7 @@
             <li><a href="{{ url_for('admin') }}">View/Delete</a></li>
           {% endif %}
           {% else %}
-            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('login') }}" >Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
           {% endif %}
         </ul>
@@ -65,7 +65,7 @@
       {% if messages %}
         {% for message in messages %}
         <div class="row flashes">
-          <h4 class="orange center-align">{{ message }}</h4>
+          <h4 class="center-align flash-text">{{ message }}</h4>
         </div>
         {% endfor %}
       {% endif %}
@@ -74,7 +74,7 @@
   {% block content %}
   {% endblock %}
   
-  <footer class="page-footer">
+  <div id="footer">
     <div class="container footer-container">
       <div class="row">
         <div class="col l6 s12">
@@ -96,7 +96,7 @@
       Contents of this webiste is copyright of Shiva Neupane, on behalf of OSS limited , UK 
       </div>
     </div>
-  </footer>
+  </div>
       
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

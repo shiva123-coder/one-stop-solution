@@ -35,12 +35,12 @@
                 <div class="modal-content">
                     <h4 class="center-align">Our details</h4>
                     <p class="job-info">
-                        <span class="job-info-head">Company Name: </span><span class="job-info-sub">{{ job.company_name }}</span><br>
-                        <span class="job-info-head">Callout Cost: </span><span class="job-info-sub">{{ job.cost }}</span><br>
-                        <span class="job-info-head">Contact no: </span><span class="job-info-sub">{{ job.contact_no }}</span><br>
-                        <span class="job-info-head">Email: </span><span class="job-info-sub">{{ job.email }}</span><br>
-                        <span class="job-info-head">Added by: </span><span class="job-info-sub">{{ job.added_by }}</span><br><br><br>
-                        <span class="job-info-sub">{{ job.desc }}</span>
+                        <span class="job-info-head">Company Name: </span><span class="job-info-sub">{{ service.company_name }}</span><br>
+                        <span class="job-info-head">Callout Cost: </span><span class="job-info-sub">{{ service.cost }}</span><br>
+                        <span class="job-info-head">Contact no: </span><span class="job-info-sub">{{ service.phone }}</span><br>
+                        <span class="job-info-head">Email: </span><span class="job-info-sub">{{ service.email }}</span><br>
+                        <span class="job-info-head">Added by: </span><span class="job-info-sub">{{ service.added_by }}</span><br><br><br>
+                        <span class="job-info-sub">{{ service.desc }}</span>
                       </p>
                 </div>
                 <div class="modal-footer">
@@ -49,14 +49,13 @@
             </div>
             <div id="job_modal1" class="modal">
                 <div class="modal-content">
-                    <h4 class="center-align">Our details</h4>
                     <h4 class="center-align text-warning-head">Are you sure you want to delete the job?</h4>
                     <p class="text-warning-sub">details can not be recover once deleted</p>  
                 </div>
                 <div class="modal-footer">
                     <a href="{{ url_for('delete_job', job_id=service._id) }}"
-                        class="modal-close waves-effect waves-light grey black-text btn">Conform</a>
-                    <a href="#" class="modal-close waves-effect waves-light grey black-text btn">Cancel</a>
+                        class="modal-close green lighten-1 btn">Confirm</a>
+                    <a href="#" class="modal-close red lighten-1 btn">Cancel</a>
                 </div>
             </div>
             {% endif %}

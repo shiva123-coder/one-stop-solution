@@ -4,39 +4,43 @@
 
 <h3 class="center-align">Welcome to Admin portal, <small class="slogan">View and delete job from the page</small></h3>
 
-        <div class="row center-align">
+      <div class="row center-align">
           {% for job in jobs %}
               <div class="col s12 m6 l4">
-                  <div class="card  red lighten-2 center-align">
-                    <div class="card-title">
-                      <span class="centre-align job-type">{{ job.job_type }}</span>
-                    </div>
-                    <div class="card-content white-text">
-                      <div class="image-head image-head-sub">
-                        <img src="{{ job.img_url }}" alt="">
-                      </div>
-                    </div>
-                    <div class="card-action">
-                      <a class="waves-effect waves-light white black-text btn modal-trigger btn-admin"
-                      href="#job_modal">View
-                      <i class="fas fa-eye"></i>
-                      <a class="waves-effect waves-light white black-text btn modal-trigger btn-admin"
-                      href="#job_modal1">Delete
-                      <i class="fas fa-mouse"></i></a>
-                    </a>
+                <div class="card  red lighten-2 center-align">
+                  <div class="card-title">
+                    <span class="centre-align job-type">{{ job.job_type }}</span>
+                  </div>
+                  <div class="card-content white-text">
+                    <div class="image-head image-head-sub">
+                      <img src="{{ job.img_url }}" alt="">
                     </div>
                   </div>
+                  <div class="card-action">
+                    <a class="waves-effect waves-light white black-text btn modal-trigger btn-admin"
+                      href="#job_modal{{ job._id }}">View
+                      <i class="fas fa-eye"></i>
+                      <a class="waves-effect waves-light white black-text btn modal-trigger btn-admin"
+                        href="#job_modal1">Delete
+                        <i class="fas fa-mouse"></i></a>
+                    </a>
+                  </div>
                 </div>
+              </div>
               <!------Modal--- -->
-              <div id="job_modal" class="modal">
+              <div id="job_modal{{ job._id }}" class="modal">
                 <div class="modal-content">
                   <h4 class="center-align">Company details</h4>
                   <p class="job-info">
-                    <span class="job-info-head">Company Name: </span><span class="job-info-sub">{{ job.company_name }}</span><br>
-                    <span class="job-info-head">Callout Cost: </span><span class="job-info-sub">{{ job.cost }}</span><br>
-                    <span class="job-info-head">Contact no: </span><span class="job-info-sub">{{ job.contact_no }}</span><br>
+                    <span class="job-info-head">Company Name: </span><span
+                      class="job-info-sub">{{ job.company_name }}</span><br>
+                    <span class="job-info-head">Callout Cost: </span><span
+                      class="job-info-sub">{{ job.cost }}</span><br>
+                    <span class="job-info-head">Contact no: </span><span
+                      class="job-info-sub">{{ job.contact_no }}</span><br>
                     <span class="job-info-head">Email: </span><span class="job-info-sub">{{ job.email }}</span><br>
-                    <span class="job-info-head">Added by: </span><span class="job-info-sub">{{ job.added_by }}</span><br><br><br>
+                    <span class="job-info-head">Added by: </span><span
+                      class="job-info-sub">{{ job.added_by }}</span><br><br><br>
                     <span class="job-info-sub">{{ job.desc }}</span>
                   </p>
                 </div>
@@ -47,14 +51,15 @@
               <div id="job_modal1" class="modal">
                 <div class="modal-content">
                   <h4 class="center-align text-warning-head">Are you sure you want to delete the job?</h4>
-                  <p class="text-warning-sub">details can not be recover once deleted</p>          
+                  <p class="text-warning-sub">details can not be recover once deleted</p>
                 </div>
                 <div class="modal-footer grey lighten-5">
-                  <a href="{{ url_for('delete_job', job_id=job._id) }}" class="modal-close waves-effect green lighten-1 btn">Confirm</a>
+                  <a href="{{ url_for('delete_job', job_id=job._id) }}"
+                    class="modal-close waves-effect green lighten-1 btn">Confirm</a>
                   <a href="#" class="modal-close waves-effect waves-light red lighten-1 btn">Cancel</a>
                 </div>
               </div>
         {% endfor %}
-        </div>
+      </div>
 {% endblock %}
 

@@ -278,7 +278,7 @@ def delete_job_by_admin(job_id):
     if "user" in session:
         mongo.db.jobs.remove({"_id": ObjectId(job_id)})
         flash("Delete request has now Completed")
-        return redirect(url_for('admin'))
+        return render_template("admin.html")
     else:
         flash("You are not authorise to perform this action")
         return redirect(url_for("login"))

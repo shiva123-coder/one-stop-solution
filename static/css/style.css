@@ -20,6 +20,14 @@ body{
     background: linear-gradient(to right, #a06529f7, #da3434);
 }
 
+
+/*----flash message----*/
+
+.flash-text{
+    color: #1b5e20;
+    font-style: italic;
+}
+
 /*----home page---*/
 
 .slogan{
@@ -82,6 +90,14 @@ body{
     margin-bottom: -5%;
 }
 
+/*------add new job page-----*/
+
+.job-heading{
+    font-size: 0.5em;
+    font-style: italic;
+    color: saddlebrown;
+}
+
 /* -------view/delete(admin only page) ------*/
 
 .job-type{
@@ -138,7 +154,7 @@ border-top: 1px solid #d8abab;
 }
 
 /* ------- footer ------*/
-.page-footer{
+#footer{
     background: linear-gradient(to right, #a06529f7, #da3434);
     left: 0;
     bottom: 0;
@@ -147,28 +163,29 @@ border-top: 1px solid #d8abab;
 
 /*----media screen ---*/
 
-@media screen and (max-width:768px){
-    .container{
-        width: 100%;
-    }
+@media screen and (min-width:1200){
 
-    .heading{
-        padding: 20px;
-        font-size: 20px;
-    }
 }
+
+@media screen and (max-width:992px){
+
+}
+
+@media screen and (max-width:768px){
+
+}
+
 
 @media (min-width:1024px) and (max-width:1024px) {
-    .main-heading {
-        margin-top: 15%;
-        margin-bottom: 10%;
+    .main-heading{
+        margin-top: 25%;
+        margin-bottom: 5%;
     }
+    
+}
+    
 
-    .input-row{
-        margin-bottom: 11%;
-    }
+@media screen and (max-width:576px){
+
 }
 
-
-
-/*----------------------Test*/

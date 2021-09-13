@@ -16,7 +16,7 @@ $(document).ready(function(){
       $("#error_desc").hide();
 
       var minLength = 5;
-      var medLength = 15;
+      var medLength = 25;
       var maxlength = 250;
       var error_img_url = false;
       var error_job_type = false;
@@ -59,7 +59,7 @@ $(document).ready(function(){
       function validate_company_name() {
             var company_name_length = $('#company_name').val().length;
             if ( company_name_length < minLength || company_name_length > medLength ) {
-                  $("#error_company_name").html("*Minimum 5 and Maximum 15 charecters allowed ");
+                  $("#error_company_name").html("*Minimum 5 and Maximum 25 charecters allowed ");
                   $("#error_company_name").show();
                   $("#company_name").css("border-bottom","1px solid #F90A0A");
                   error_company_name = true;

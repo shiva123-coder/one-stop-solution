@@ -6,8 +6,8 @@
         <div class="row card-panel light-grey">
             <form class="col s12 new-form" method="POST" action="{{ url_for('add_job') }}">
                 <!----image----->
-                <div class="row col s12 col m8 offset-l2 col l8">
-                    <div class="input-field col s12"> 
+                <div class="row">
+                    <div class="input-field col s12 offset-m2 m8 offset-l3 l6"> 
                         <i class="far fa-images prefix"></i>
                         <input id="img_url" name="img_url" type="url" class="validate" required>
                         <label for="img_url">Image URL</label>
@@ -15,8 +15,8 @@
                     </div>
                 </div>
                 <!---job type---->
-                <div class="row col s12 col m8 offset-l2 col l8">
-                    <div class="input-field col s12">
+                <div class="row ">
+                    <div class="input-field col s12 offset-m2 m8 offset-l3 l6">
                         <i class="fas fa-briefcase prefix"></i>
                         <input id="job_type" name="job_type"
                             type="text" class="validate" required>
@@ -25,8 +25,8 @@
                     </div>
                 </div>
                 <!--company name-->
-                <div class="row col s12 col m8 offset-l2 col l8">
-                    <div class="input-field col s12">
+                <div class="row ">
+                    <div class="input-field col s12 offset-m2 m8 offset-l3 l6">
                         <i class="fas fa-building prefix"></i>
                         <input id="company_name" name="company_name"
                             type="text" class="validate" required>
@@ -35,8 +35,8 @@
                     </div>
                 </div>
                 <!--cost-->
-                <div class="row col s12 col m8 offset-l2 col l8">
-                    <div class="input-field col col s12">
+                <div class="row ">
+                    <div class="input-field col s12 offset-m2 m8 offset-l3 l6">
                         <i class="fas fa-pound-sign prefix"></i>
                         <input id="cost" name="cost" type="number"
                              class="validate" required>
@@ -45,8 +45,8 @@
                     </div>
                 </div>
                 <!--contact no-->
-                <div class="row col s12 col m8 offset-l2 col l8">
-                    <div class="input-field col s12">
+                <div class="row ">
+                    <div class="input-field col s12 offset-m2 m8 offset-l3 l6">
                         <i class="fas fa-phone-alt prefix"></i>
                         <input id="phone" name="phone" type="tel"
                              class="validate" required>
@@ -55,8 +55,8 @@
                     </div>
                 </div>
                 <!----email---->
-                <div class="row col s12 col m8 offset-l2 col l8">
-                    <div class="input-field col s12">
+                <div class="row ">
+                    <div class="input-field col s12 offset-m2 m8 offset-l3 l6">
                         <i class="fas fa-at prefix"></i>
                         <input id="email" type="email" name="email" class="validate"
                             required>
@@ -65,8 +65,8 @@
                     </div>
                 </div>
                 <!--description--->
-                <div class="row col s12 col m8 offset-l2 col l8">
-                    <div class="input-field col s12">
+                <div class="row ">
+                    <div class="input-field col s12 offset-m2 m8 offset-l3 l6">
                         <i class="fas fa-align-left prefix"></i>
                         <textarea id="desc" name="desc" class="materialize-textarea validate"
                             required>

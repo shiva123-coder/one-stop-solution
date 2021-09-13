@@ -94,29 +94,14 @@ id="job_modal{{ job._id }}
   - I quickly went through if statement inside the register function on my app.py and all of the logic was ok to me, also couldnt find any error on my html template then I decided to quickly check on my mongoDB and noticed that user login detais were not passed to my database which then gave me some sort of idea on where the issue was so I decided to re-check my python logic on app.py file and finally discover an issue. I created dictionary to store username and password which was within my else statement which means if else condition excute then username and password supposed to stored in register dictionary then passed to database using mongo command which was not happening due to I created [dictionary outside of else statement](static/images/login-error.jpg) and only after returning the register template this means else statement never reached to the dictionary that I build to store user credentials. I then moved register dictionary inside else statement which then solved this issue
 
 - Images related to each job type on the home page and my account page were not responsive instead image were stretcing on larger screens and shrinking on small devices.
-  - I have used some custom styles on my style.css targeting the image to fix this issue
+  - I have used object-fit property on my style.css targeting the image to fix this issue
     ```
-    .hero-image {
-    display: block;
-    border-radius: 2px 2px 0 0;
-    position: relative;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    min-width: 100%;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    }
-    
+    object-fit: cover;
+
     ```
   
+- I encountered further issue with responsiveness on the card and images on all of my pages as they were not responsive and also whitespace were not utilized properly when viewing on different screensizes
+  - I decided to restructure my HTML codes for card and images and checking step by step during build process which gave proved to be an easier way to find the problem and additionally I did depth research to understand offset class on grid layout which I finally understood clearly and at the end restructring HTML codes and utilizing materalize offset class solved my problem.
 
 ## Technologies Used
 

@@ -35,73 +35,32 @@ body{
 .btn-home{
     margin: 5px;
 }
-/* 
-.card-header{
-    width: 100%;
-    padding: 20px;
+
+
+/* ---images on home page -----*/
+.card-title{
+    padding: 5px;
+    margin-bottom: -2%;
+}
+
+.card-image{
+    background-color: brown;
+}
+
+.image-head{
+    height: 350px;
+    padding: 0;
+}
+
+.image-head img{
     height: 100%;
-}
-
-
-.card-header img {
-    display: block;
-    border-radius: 2px 2px 0 0;
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
-    min-width: 100%;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
 }
 
-.card-hero{
-    margin: 50px auto;
+.image-head-sub img{
+    border-radius: 20px;
 }
-
-
-.container{
-    width: 90%;
-    margin: 50px auto;
-}
-
-.heading{
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 50px;
-} 
-
-.card-row{
-    margin-bottom: 50px;
-}
-
- .card{
-    width: 100%;
-    background-color: aqua;
-    border: 1px solid #ccc;
-    margin-bottom: 50px;
-    transition: 0.9s;
-} 
-
-.card-header{
-    text-align: center;
-    padding: 50px 10px;
-    background: rgb(189 47 47 / 71%);
-    color: #ffff;
-}
-
-.card-body{
-    padding: 30px 20px;
-    text-align: center;
-    font-size: 18px;
-} */
-
 /*---------login page ----------*/
 .card-login{
     background-color: #e5d9914d !important;
@@ -121,6 +80,18 @@ body{
 .main-heading{
     margin-top: 5%;
     margin-bottom: -5%;
+}
+
+
+/* -------view/delete(admin only page) ------*/
+
+.job-type{
+    font-weight: 600;
+    font-style: italic;
+}
+
+.btn-admin{
+    margin: 5px;
 }
 
 /* ------- footer ------*/

@@ -59,7 +59,7 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
@@ -84,13 +84,11 @@ def register():
         # check if username is already exits in the database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
         if existing_user:
             flash(
                 f"username {request.form.get('username')} is alraedy registered\
                      please try different username")
             return redirect(url_for("register"))
-        
         """
         check length of username is within the limit and
         display flash message if length is outside of its limit
@@ -111,7 +109,6 @@ def register():
             flash(
                 "password should be between 5-12 character, please try again")
             return redirect(url_for("register"))
-        
         # check if password contain any space
         password_supplied = request.form.get("password")
         if ' ' in password_supplied:
@@ -132,13 +129,13 @@ def register():
         """
         password_supplied = request.form.get("password")
         char = re.compile('[@_!#$%^&£()<>?|/\}{¬;*"=+]')
-        if(char.search(password_supplied) == None):
+        if char.search(password_supplied) == None:
             flash("password should contain atleast one special character")
         else:
-            register = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-            }
+            register = {"username": request.form.get("username").lower(),
+                        "password": generate_password_hash(
+                           request.form.get("password"))
+                        }
 
             mongo.db.users.insert_one(register)
             flash(" Registration Successful!")
@@ -165,7 +162,7 @@ def account(username):
 
             # retrive job details created by user
             services = list(mongo.db.jobs.find(
-                {"added_by": session["user"]}))   
+                {"added_by": session["user"]}))
 
             return render_template(
                 "account.html", username=username, services=services)
@@ -238,10 +235,10 @@ def edit_job(job_id):
                 mongo.db.jobs.update({"_id": ObjectId(job_id)}, send)
                 flash("Job successfully updated")
                 return redirect(url_for('account', username=session['user']))
-        
             job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
             selections = mongo.db.jobs.find()
-            return render_template("edit_job.html", job=job, selections=selections)
+            return render_template(
+                "edit_job.html", job=job, selections=selections)
 
         else:
             flash("You are not authorised to edit this job")
@@ -249,11 +246,10 @@ def edit_job(job_id):
     else:
         flash("You must be logged in to view this page")
         return redirect(url_for("login"))
-    
-    
-
 # user to delete their job from page
 # user can only delete their own job
+
+
 @app.route("/delete_job/<job_id>")
 def delete_job(job_id):
     if "user" in session:
@@ -278,13 +274,14 @@ def delete_job_by_admin(job_id):
     if "user" in session:
         mongo.db.jobs.remove({"_id": ObjectId(job_id)})
         flash("Delete request has now Completed")
-        return render_template("admin.html")
+        return redirect(url_for('account', username=session['user']))
     else:
         flash("You are not authorise to perform this action")
         return redirect(url_for("login"))
-    
 
 # admin access only
+
+
 @app.route("/admin")
 def admin():
     if "user" in session:
@@ -303,5 +300,5 @@ def admin():
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-    port=int(os.environ.get("PORT")),
-    debug=True)                              # Note : Debug value must be set to false once project completed
+            port=int(os.environ.get("PORT")),
+            debug=True)

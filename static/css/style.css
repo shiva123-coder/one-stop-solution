@@ -14,14 +14,29 @@ body{
     line-height: 1.5;
     overflow-x: hidden;
     position: relative;
+    height: 100%;
 }
 
+header{
+    min-height: 5vh;
+}
+
+section{
+    min-height: 90vh;
+}
+
+#footer{
+    min-height: 5vh;
+}
 /* -----navbar----*/
 
 .nav-extended {
     background: linear-gradient(to right, #a06529f7, #da3434);
 }
 
+nav .brand-logo {
+    margin-left: 20px;
+}
 
 /*----flash message----*/
 
@@ -58,7 +73,7 @@ body{
 }
 
 .image-head{
-    /* height: 350px; */
+    height: 350px;
     padding: 0;
 }
 
@@ -98,6 +113,10 @@ body{
     font-size: 0.5em;
     font-style: italic;
     color: saddlebrown;
+}
+
+.heading-update{
+    margin-top: 5%;
 }
 
 /* -------view/delete(admin only page) ------*/
@@ -163,12 +182,14 @@ border-top: 1px solid #d8abab;
     width: 100vw;
     height: 5vh;
     /* margin-top: auto; */
-    position: absolute;
+    position: static;
+    margin-bottom: 0;
 }
 
 .footer-text{
     color: #fff;
     font-weight:500;
+    padding-top: 10px
 }
 /*----media screen ---*/
 
@@ -207,13 +228,18 @@ border-top: 1px solid #d8abab;
         margin-top: 25%;
         margin-bottom: 5%;
     }
-    
 }
 
 
 @media screen and (max-width:576px){
     .main-heading{
         margin-top: 40%;
+    }
+    .page-heading{
+        font-size: small;
+    }
+    .heading-update{
+        font-size: small;
     }
 }
 

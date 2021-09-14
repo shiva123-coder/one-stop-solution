@@ -3,6 +3,15 @@ $(document).ready(function(){
       $('.modal').modal();
 
 
+      function isNumberKey(evt){
+	var charCode = (evt.which) ? evt.which : event.keyCode
+	if (charCode > 31 && (charCode < 48 || charCode > 57))
+	return false;
+
+	return true;
+     }
+
+   
     // concept of validating form input field and showing error messagetaken from youtube video of The IT guy (https://www.youtube.com/watch?v=W4-5WM60gWg&t=121s)
     // Some of the codes were also taken and modified as per project requirements
 

@@ -1,12 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h3 class="center-align">{{ username.capitalize() }}'s Account</h3>
-
-    {% for service in services %}
-
-        {% if session["user"] == service.added_by %}
-            
+<h3 class="center-align">{{ username.capitalize() }}'s Account</h3>
+{% for service in services %}
+    {% if session["user"] == service.added_by %}
         <div class="row center-align">
             <div class="col s12 offset-m2 m8 offset-l3 l6">
                 <div class="card  red lighten-2 center-align">
@@ -15,33 +11,39 @@
                     </div>
                     <div class="card-content white-text">
                         <div class="image-head">
-                            <img src="{{ service.img_url }}" alt="">
+                            <img src="{{ service.img_url }}" alt="job image">
                         </div>
                     </div>
                     <div class="card-action">
                         <a class="waves-effect waves-light white black-text btn modal-trigger btn-admin"
                             href="{{ url_for('edit_job',job_id=service._id) }}">Edit
                             <i class="fas fa-eye"></i>
-                            <a class="waves-effect waves-light white black-text btn modal-trigger btn-admin"
-                                href="#job_modal1">Delete
-                                <i class="fas fa-mouse"></i></a>
+                        </a>
+                        </a>
+                        <a class="waves-effect waves-light white black-text btn modal-trigger btn-admin"
+                            href="#job_modal1">Delete
+                            <i class="fas fa-trash-alt"></i>
                         </a>
                     </div>
                 </div>
             </div>
-
             <!------Modal--- -->
             <div id="job_modal" class="modal">
                 <div class="modal-content">
                     <h4 class="center-align">Our details</h4>
                     <p class="job-info">
-                        <span class="job-info-head">Company Name: </span><span class="job-info-sub">{{ service.company_name }}</span><br>
-                        <span class="job-info-head">Callout Cost: </span><span class="job-info-sub">{{ service.cost }}</span><br>
-                        <span class="job-info-head">Contact no: </span><span class="job-info-sub">{{ service.phone }}</span><br>
-                        <span class="job-info-head">Email: </span><span class="job-info-sub">{{ service.email }}</span><br>
-                        <span class="job-info-head">Added by: </span><span class="job-info-sub">{{ service.added_by }}</span><br><br><br>
+                        <span class="job-info-head">Company Name: </span><span
+                            class="job-info-sub">{{ service.company_name }}</span><br>
+                        <span class="job-info-head">Callout Cost: </span><span
+                            class="job-info-sub">{{ service.cost }}</span><br>
+                        <span class="job-info-head">Contact no: </span><span
+                            class="job-info-sub">{{ service.phone }}</span><br>
+                        <span class="job-info-head">Email: </span><span
+                            class="job-info-sub">{{ service.email }}</span><br>
+                        <span class="job-info-head">Added by: </span><span
+                            class="job-info-sub">{{ service.added_by }}</span><br><br><br>
                         <span class="job-info-sub">{{ service.desc }}</span>
-                      </p>
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <a href="#" class="modal-close waves-effect waves-light grey black-text btn">Cancel</a>
@@ -50,17 +52,17 @@
             <div id="job_modal1" class="modal">
                 <div class="modal-content">
                     <h4 class="center-align text-warning-head">Are you sure you want to delete the job?</h4>
-                    <p class="text-warning-sub">details can not be recover once deleted</p>  
+                    <p class="text-warning-sub">details can not be recover once deleted</p>
                 </div>
                 <div class="modal-footer">
                     <a href="{{ url_for('delete_job', job_id=service._id) }}"
-                        class="modal-close green lighten-1 btn">Confirm</a>
+                        class="modal-close green lighten-1 btn">Confirm
+                    </a>
                     <a href="#" class="modal-close red lighten-1 btn">Cancel</a>
                 </div>
             </div>
-            {% endif %}
         </div>
-    {% endfor %}
-
-
+    {% endif %}
+    <!-- </div> -->
+{% endfor %}
 {% endblock %}

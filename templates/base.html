@@ -1,91 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Ovo&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    type="text/css">
-  {% block styles %}
-  {% endblock %}
-  <title>One Stop Solutions</title>
-</head>
-
-<body>
-  <header>
-    <!------navbar----->
-    <nav class="nav-extended">
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">OSS Limited</a>
-        <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger right"><i
-            class="fas fa-bars"></i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url_for('home') }}">Home</a></li>
-          {% if session.user %}
-            <li><a href="{{ url_for('logout') }}">Logout</a></li>
-            <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
-            <li><a href="{{ url_for('add_job') }}">Add new job</a></li>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ovo&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+            type="text/css">
+        {% block styles %}
+        {% endblock %}
+        <title>One Stop Solutions</title>
+    </head>
+    <body>
+        <header>
+          <!------navbar----->
+          <nav class="nav-extended">
+              <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">OSS Limited</a>
+                <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger right"><i
+                    class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                  <li><a href="{{ url_for('home') }}">Home</a></li>
+                  {% if session.user %}
+                    <!------options only visible to those who logged into the page only----->
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
+                    <li><a href="{{ url_for('add_job') }}">Add new job</a></li>
+                  <!-------------------option visible for admin only-------->
+                  {% if session.user|lower == "admin"|lower %}
+                   <li><a href="{{ url_for('admin') }}">View/Delete</a></li>
+                  {% endif %}
+                  {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                  {% endif %}
+                </ul>
+              </div>
+          </nav>
+          <!-----mobile sidenav------->
+          <ul class="sidenav" id="mobile-demo">
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+            {% if session.user %}
+              <li><a href="{{ url_for('logout') }}">Logout</a></li>
+              <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
+              <li><a href="{{ url_for('add_job') }}">Add new job</a></li>
             {% if session.user|lower == "admin"|lower %}
-            <li><a href="{{ url_for('admin') }}">View/Delete</a></li>
-          {% endif %}
-          {% else %}
-            <li><a href="{{ url_for('login') }}" >Login</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </nav>
-    <!-----mobile sidenav------->
-    <ul class="sidenav" id="mobile-demo">
-      <li><a href="{{ url_for('home') }}">Home</a></li>
-      {% if session.user %}
-          <li><a href="{{ url_for('logout') }}">Logout</a></li>
-          <li><a href="{{ url_for('account', username=session['user']) }}">My Account</a></li>
-          <li><a href="{{ url_for('add_job') }}" >Add new job</a></li>
-          {% if session.user|lower == "admin"|lower %}
-            <li><a href="{{ url_for('admin') }}">View/Delete</a></li>
-          {% endif %}
-          
-      {% else %}
-          <li><a href="{{ url_for('login') }}">Login</a></li>
-          <li><a href="{{ url_for('register') }}">Register</a></li>
-      {% endif %}
-    </ul>
-  </header>
-  <section>
-    <!-- flash messages -->
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        {% for message in messages %}
-        <div class="row flashes">
-          <h4 class="center-align flash-text">{{ message }}</h4>
+              <li><a href="{{ url_for('admin') }}">View/Delete</a></li>
+            {% endif %}
+            {% else %}
+              <li><a href="{{ url_for('login') }}">Login</a></li>
+              <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
+          </ul>
+        </header>
+        <section>
+          <!-- flash messages -->
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                <div class="row flashes">
+                  <h4 class="center-align flash-text">{{ message }}</h4>
+                </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+          {% block content %}
+          {% endblock %}
+        </section>
+        <div id="footer" class="center-align">
+          <p class="footer-text">&copy; Shiva Neupane, 2021</p>
         </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
-  </section>
-  {% block content %}
-  {% endblock %}
-  
-  <div id="footer" class="center-align">
-      <p class="footer-text">&copy; Shiva Neupane, 2021</p> 
-      </div>
-  </div>
-      
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-  {% block scripts %}
-  {% endblock %}
-</body>
-
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        {% block scripts %}
+        {% endblock %}
+    </body>
 </html>

@@ -1,62 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
-
-
-<h3 class="center-align">Welcome to OSS Limited, <small class="slogan">one platform for all solutions</small></h3>
-
-    <div class="row card-panel white ">
+  <h3 class="center-align page-heading">Welcome to OSS Limited, <small class="slogan">one platform for all solutions</small></h3>
+  <div class="row card-panel white ">
       <form action="{{ url_for('search') }}" method="post" class="col s12 offset-m1 m10">
-        <div class="row valign-wrapper center-align">
-          <div class="input-field col s12 offset-m1 m10">
-            <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
-            <input type="text" name="query" id="query" minlength="3" class="validate" required>
-            <label for="query">Search</label>
-          </div>
-          <div class="col s12 m4">
-            <a href="{{ url_for('home') }}" class="red btn btn-home btn-reset text-shadow">Reset</a>
-            <button type="submit" class=" btn btn-search text-shadow">
-              <i class="fas fa-search left"></i> Search
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-
-        <div class="row center-align">
-          {% for job in jobs %}
-              <div class="col s12 m6 l4">
-                  <div class="card  red lighten-2 center-align">
-                    <div class="card-content white-text">
-                      <div class="image-head">
-                        <img src="{{ job.img_url }}" alt="">
-                      </div>
-                    </div>
-                    <div class="card-action">
-                      <a class="waves-effect waves-light white black-text btn modal-trigger"
-                      href="#job_modal{{ job._id }}">{{ job.job_type }}
-                      <i class="fas fa-eye"></i>
-                    </a>
-                    </div>
-                  </div>
-                </div>
-              <!------Modal--- -->
-              <div id="job_modal{{ job._id }}" class="modal">
-                <div class="modal-content">
-                  <h4 class="center-align">Our details</h4>
-                  <p class="job-info">
-                    <span class="job-info-head">Company Name: </span><span class="job-info-sub">{{ job.company_name }}</span><br>
-                    <span class="job-info-head">Callout Cost: </span><span class="job-info-sub">{{ job.cost }}</span><br>
-                    <span class="job-info-head">Contact no: </span><span class="job-info-sub">{{ job.phone }}</span><br>
-                    <span class="job-info-head">Email: </span><span class="job-info-sub">{{ job.email }}</span><br>
-                    <span class="job-info-head">Added by: </span><span class="job-info-sub">{{ job.added_by }}</span><br><br><br>
-                    <span class="job-info-sub">{{ job.desc }}</span>
-                  </p>
-                </div>
-                <div class="modal-footer red lighten-2">
-                  <a href="#" class="modal-close white black-text btn btn-modal">Cancel</a>
-                </div>
+          <div class="row valign-wrapper center-align">
+              <div class="input-field col s12 offset-m1 m10">
+                  <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
+                  <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                  <label for="query">Search</label>
               </div>
-        {% endfor %}
+              <div class="col s12 m4">
+                  <a href="{{ url_for('home') }}" class="red btn btn-home btn-reset text-shadow">Reset</a>
+                  <button type="submit" class=" btn btn-search text-shadow">
+                  <i class="fas fa-search left"></i> Search
+                  </button>
+              </div>
+          </div>
+      </form>
+  </div>
+  <div class="row center-align">
+      {% for job in jobs %}
+        <div class="col s12 m6 l4">
+            <div class="card  red lighten-2 center-align">
+                <div class="card-content white-text">
+                    <div class="image-head">
+                      <img src="{{ job.img_url }}" alt="job image">
+                    </div>
+                </div>
+                <div class="card-action">
+                    <a class="waves-effect waves-light white black-text btn modal-trigger"
+                      href="#job_modal{{ job._id }}">{{ job.job_type }}
+                    <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+            </div>
         </div>
+        <!------Modal--- -->
+        <div id="job_modal{{ job._id }}" class="modal">
+            <div class="modal-content">
+                <h4 class="center-align">Our details</h4>
+                <p class="job-info">
+                  <span class="job-info-head">Company Name: </span><span
+                    class="job-info-sub">{{ job.company_name }}</span><br>
+                  <span class="job-info-head">Callout Cost(£): </span><span
+                    class="job-info-sub">{{ job.cost }}</span><br>
+                  <span class="job-info-head">Contact no: </span><span class="job-info-sub">{{ job.phone }}</span><br>
+                  <span class="job-info-head">Email: </span><span class="job-info-sub">{{ job.email }}</span><br>
+                  <span class="job-info-head">Added by: </span><span
+                    class="job-info-sub">{{ job.added_by }}</span><br><br><br>
+                  <span class="job-info-sub">{{ job.desc }}</span>
+                </p>
+            </div>
+            <div class="modal-footer red lighten-2">
+              <a href="#" class="modal-close white black-text btn btn-modal">Cancel</a>
+            </div>
+        </div>
+      {% endfor %}
+  </div>
 {% endblock %}
-

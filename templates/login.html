@@ -1,46 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h3 class="center-align main-heading">Login Here</h3>
-
-<div class="row input-row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
-        <div class="card-panel card-login">
-            <!--------username------->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-users prefix light-green-text text-darken-2"></i>
-                    <input id="username" name="username" type="text"
-                    class="validate" required>
-                    <label for="username">Username</label>
+    <h3 class="center-align main-heading">Login Here</h3>
+    <div class="row input-row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+            <div class="card-panel card-login">
+                <!--------username------->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-users prefix light-green-text text-darken-2"></i>
+                        <input id="username" name="username" type="text"
+                            class="validate" required>
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <!--------password------->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-key prefix light-blue-green-text text-darken-2"></i>
+                        <input id="password" name="password" type="password"
+                            class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!--------button------->
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large light-green">
+                        Login<i class="fas fa-sign-in-alt"></i>
+                    </button>
                 </div>
             </div>
-            <!--------password------->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-key prefix light-blue-green-text text-darken-2"></i>
-                    <input id="password" name="password" type="password"
-                    class="validate" required>
-                    <label for="password">Password</label>
-                </div>
-            </div>
-            <!--------button------->
-            <div class="row">
-                <button type="submit" class="col s12 btn-large light-green">
-                    Login <i class="fas fa-sign-in-alt"></i>
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
-<!---register option for new users-->
-<div class="row">
-    <div class="col s12">
-        <p class="center-align text-info">
-            New Here?
-            <a href="{{ url_for('register') }}" class="light-green-text">Register Account</a>
-        </p>
+        </form>
     </div>
-</div>
-
+    <!---register option for new users-->
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align text-info">
+                New Here?
+                <a href="{{ url_for('register') }}" class="light-green-text">Register Account</a>
+            </p>
+        </div>
+    </div>
 {% endblock %}

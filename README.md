@@ -286,7 +286,7 @@ I used GitHub for my version control and Heroku to host the live version of my p
 
 
 ## Testing 
-Website was tested through the build process using live browser and dev tool , additionally each pages were tested using Google Chrome, Microsoft edge and Safari. Also live pages were tested using Desktop, Laptop, iPhone, iPad and Android phone. [Further test document can be found here](TEST.md)
+Website was tested through the build process using live browser and dev tool , additionally each pages were tested using Google Chrome, Microsoft edge and Safari. Also live pages were tested using Desktop, Laptop, iPhone, iPad and Android phone. Test document can be found here - [CLICK HERE TO VIEW](TEST.md)
 
 ## Credit
 

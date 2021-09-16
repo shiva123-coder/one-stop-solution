@@ -118,6 +118,18 @@ id="job_modal{{ job._id }}
         
       ```
 
+- I was keep getting an Squiggly line in one of the if statement which I created to protect password, I knew that line means something wrong with my code however I was not able to find exact issue, additionally upon testing my if statement, it was excuted as expected and not affecting any of my work therefore I couldnt think much about this as an issue. Finally when I was checking my codes using PEP8 online checker this was showing as an [E711 error](static/images/pep8-error.jpg) and at this point I understood that this code is not PEP8 compliant, after doing some research I have found that comparisons to the singleton objects, like True, False, and None, should be done with identity, not equality. I then slightly change my code and re-check on PEP8 and then all passed.
+  - Before 
+     ```
+      if (char.search(password_supplied) == None):
+     ```
+  - After
+     ```
+      if (char.search(password_supplied) is None):
+     ```
+
+
+
 
 ## Technologies Used
 

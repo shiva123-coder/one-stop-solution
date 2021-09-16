@@ -87,7 +87,7 @@ def register():
         if existing_user:
             flash(
                 f"username {request.form.get('username')} is alraedy registered\
-                     please try different username")
+                    please try different username")
             return redirect(url_for("register"))
         """
         check length of username is within the limit and
@@ -129,7 +129,7 @@ def register():
         """
         password_supplied = request.form.get("password")
         char = re.compile('[@_!#$%^&£()<>?|/\}{¬;*"=+]')
-        if char.search(password_supplied) == None:
+        if (char.search(password_supplied) is None):
             flash("password should contain atleast one special character")
         else:
             register = {"username": request.form.get("username").lower(),
@@ -246,10 +246,10 @@ def edit_job(job_id):
     else:
         flash("You must be logged in to view this page")
         return redirect(url_for("login"))
+
+
 # user to delete their job from page
 # user can only delete their own job
-
-
 @app.route("/delete_job/<job_id>")
 def delete_job(job_id):
     if "user" in session:

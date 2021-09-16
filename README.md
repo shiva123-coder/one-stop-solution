@@ -4,8 +4,25 @@
 
 The ONE-STOP Solution is a website dedicated as a platform for various self-employed people who want to sell their skills and provide services to the communities. The   website allows users to search and view various services, register and add the applicable services as well as interact with the website’s administrator to query and book available services. Furthermore, users can be added and removed by the admin. This website is my Milestone Project 3 for the Full Stack Developer course at Code Institute. In addition, I am planning to use this website to start my own online business in the near future.
 
+## Table of Contents
 
-## User Experience(UX)
+- [User Experiencess](#user-experiences)
+  - [User Stories](#user-stories)
+  - [UX Framework](#ux-framework)
+  - [Wireframes](#wireframes)
+- [Existing Features](#existing-features)
+- [Features to be added in future](#features-to-be-added-in-future)
+- [Issues and Resolutions](#issues-and-resolutions)
+- [Technoligies Used](#technologies-used)
+  - [Languages used](#languages-used)
+  - [Frameworks, Libraries, Programme and Resources Used](#frameworks-libraries-programme-and-resources-used)
+- [Code Validation](#code-validation)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credit](#credit)
+- [Acknowledgement](#acknowledgement)
+
+## User Experiences
 
 The goal of this website is to provide a satisfactory user experience and an accessible platform for users to find various available services which can be useful to support the necessities and day-to-day activities. The website should allow users to easily register or login and search for the right services at the right time based on their requirements. The users are also able to easily add and edit their services as well as find the required services via this website.
 
@@ -60,8 +77,79 @@ The skeleton of the website will utilise Materialize for the CSS layout of the p
 
 The surface design of the website will also utilise Materialize CSS to provide a theme and styling for the components of the website. Google Fonts is used to style the text using the Yusei Magic' and 'Ovo' fonts  and FontAwesome is used for various icons. The colour scheme is designed to be professionally appealing to the target audience of varied professionals, and provide clear readability as well as being responsive.
 
+## Wireframes
+
+- As an initial process of the project design, wireframes were created for desktop, iPad and mobile screen sizes using [Balsamiq](https://balsamiq.com/).
+
+* Desktop Wireframe - [View](static/wireframes/wireframe-desktop-ms3.pdf)
+
+* iPad Wireframe - [View](static/wireframes/wireframe-ipad-ms3.pdf)
+
+* Mobile Wireframe - [View](static/wireframes/wireframe-mobile-ms3.pdf)
+
+## Existing Features
+- All the pages on this website are mainly didvided into 4 section which are:
+  - Navbar
+  - Flash Message
+  - Main content
+  - Footer
+
+#### Navbar
+- Navbar for this website is created by utilizing Materalize CSS framework, Navbar is on top of the page expanding full screen size with menu items on the right hand side and company name as Navbar brand on left hand side of the page. Navbar has three main links to welcome the users which are Home, Login and Register and user will be redirecting to the correct page once link is clicked. Additionally nav-links will be updated accordingly once user logged into the page and users will be able to see updated nav-links as below
+  - My Account
+    - user able to view their profile by selecting My account option on the Navbar
+  - Add new job
+    - user able to add new job to the page by selecting Add new job option on the Navbar
+  - Logout
+    - user able to logout from the page
+  - View/Delete
+    - This option is restricted to admin user only, option to gain access to this page is only visible once user logged in as an admin user
+
+#### Flash message
+- All the flash message will display just below the Navbar on every pages, python user flash library to generate the flash message and render to the page whenever required.
+
+#### Main content
+- This is the Main section of the page where informations and images are displayed to the user
+
+#### Footer
+- Small footer is created to hold the copyright information of the website which is final section of the page and sit at the bottom and each page of the website contain same footer with same copyright information
+
+### Home Page
+  - This website has very simple, easy to use and user friendly home page which is dividded into 4 sub sections which are Navbar, search field, images and footer.
 
 
+#### Search field
+- search field is situated just below Navbar on the page which allow user to search the job listed on the page just by typing the name of the job user wish to search and then hit search button on the right side of search bar, additionally reset button also added next to search field which allow user to cancel their search and simply display all the jobs available.
+
+#### Job images
+- This is the main section of the page where all the jobs available will be shown with images, Materalize card utilized on this section to render all the jobs to the page, each job will be shown with relevant image and below each image title of the Job is shown as a button, once button is clicked small modal will pop up to the screen and information retated to each job will display on the screen. All images and information related to this page stored in mongoDB collection and python language is used to render the images and information to the page from back-end.
+
+### Register page
+- This page allow user to register themself to the page which can be simply complete by filling the registration form provided, which has only 2 input fields, username and password. user must follow the certain format/pattern while registering and if user do not follow the required fromat while completing the registration form then flash message will display on top of the form to inform user about what need to be followed. Simple form with input element use to create the form and python functionality is use to check the user input and display flash message accordingly. Flash message will be diaply on the page once registration successful and user details will be stored in the mongoDB collections. Additionally this page utilize Werkzeuz security which is python library to hash the password and stored in database securley. Underneath the registration form small text with login option also provided which allow user to login directly if they are already registered however select register option by mistake. This allow user to peform registration and login task from the same page without having to navigate to the exact page.
+
+### Login page
+- This page looks very identical to register page and contains similar options however only accessible to those user who is already registered to the page, user simply need to input their username and password to login to the page, once login successful flash message will display on screen to welcome the user and user will be redirected to their own profile. This page utilize some python functionality to check and verify the users input and only allow user to login if their details matched with what they have provided while registration. Additionally python will display the flash message to inform user if username or password they supplied is not found and redirect the user back to login page again. Underneath the login form small text with registration option also provided which allow user to register directly if they are not registered however select login option by mistake. This allow user to peform registration and login task from the same page without having to navigate to the exact page.
+
+### Add new Job page
+- This option is visible to the user only once they are logged into the page, this page allow user to add their own job by completing the form provided and then hit submit button. input elements in the forms need to fullfll certain criteria and if supplied input do not match certain criteria or left empty then warning message will appear below input field and colour of the bottom border will change to red, also required attribute is utilize on this form to ensure user are not able to submit the form without completing, if any of the field left empty and hit submit button then required attribute trigger and let user knows that they must complete the field. Python funtionality also added to this page to conduct some check to ensure that only user are able to add the job. once user select the option to add new job then python function will excute and do some checks and only let user to add the job if user in the session and user who logged in are the same person, otherwise python will immediatley redirect user to login page and display flash message accordingly. Javascript in the form of jQuery is utilized to validate the form and display and hide error message accordingly while user completing the form. Once user added the information, python will then send the information to mongoDB using insertOne method and also render the information in the home page
+
+### My Account page
+- This option also only visible to the user once they are logged in. Python function will execute once user select this option and check to verify the user first and if person selecting the option is really a user then python will allow user to access the page and display welcome message to the user, if user is not verified then python will redirect user to the login page and display flash message accordingly. Once user verified and inside the page user able to see all the job added to the page by themself and also able to edit and delete if they wish to do by just clicking the buttons brovided below job images.
+  #### Edit/delete job
+  - user can edit or delete their own job once they are inside their own account, every job added by user will be shown in My account page with job images and job title, each job has two options for user which are edit and delete. Once user select edit job option then python function will trigger to check wether person trying to edit the job is really a user or not, if not then user will be redirected to login page aagin with correct flash messaeg and if the person is really the user then python will populate the form with pre-field data in the input field and allow user to update their job information. Similar to add new job form, edit job form also need to pass the input validation check which is done by utilizing Javascript in the form of jQuery. once inpt field validate and user select the update button then all the updated information will be store in the database which is done by using updateOne method.
+  Additionally user can also delete their own job, once user select delete button python will trigger the delete function and run if/else statement to check user's details and let user to act accordingly. First python will check if user is in the session or not then second step python will check if user logged in is the similar user who add this job. if both condition is satisfied they only user will be able to delete the job otherwise python will redirect the user to login page and display flash message accordingly
+  python use mongoDB remove() method to perform delete job once condition satisfied. Once user select the delete button, modal will trigger and display warning message on screen to allow user to confirm their delete request or cancel, purpose of this modal is to prevent deleting the job straightway if user select the delete button by mistake or in case user wants to change their mind once after delete button clicked. 
+
+### View/Delete page
+- This page is only for admin user, and option to access this page will only be visible once user logged in as an admin, python functionality does the initial check to ensure user logged in to the page is admin and display view/delete option if login user is really an admin user else redirect user to the login page and display flash message accordingly if user login is not an admin user. once if condition satisfied user will then have access to the page where all the jobs will be shown with image, job title and view/delete buttons. admin user can view all the jobs and also able to delete any job from this page using the buttons provided.
+
+### Logout
+- This option only visible to the user once they are logged into the page, user can simply select the logout option and they will be loggout from the page, python function will execute once user select logout option and redirect them to login page immediately and display flash message accordingly.
+
+## Features to be added in future
+- Option for user to send email enquiry/text message directly from the job information page without having to fill the form
+- option to book for the job with the company directly from the website 
+- option to allow user to make an online payment once job booked abd confirmed and send email conformation of booked job and payment to the user email.
 
 ## Issues and Resolutions
 - Live browser did not worked and upon checking on Gitpod terminal , Error 98 was shown
@@ -128,74 +216,9 @@ id="job_modal{{ job._id }}
       if (char.search(password_supplied) is None):
      ```
 
-
-## Existing Features
-- All the pages on this website are mainly didvided into 4 section which are:
-  - Navbar
-  - Flash Message
-  - Main content
-  - Footer
-
-#### Navbar
-- Navbar for this website is created by utilizing Materalize CSS framework, Navbar is on top of the page expanding full screen size with menu items on the right hand side and company name as Navbar brand on left hand side of the page. Navbar has three main links to welcome the users which are Home, Login and Register and user will be redirecting to the correct page once link is clicked. Additionally nav-links will be updated accordingly once user logged into the page and users will be able to see updated nav-links as below
-  - My Account
-    - user able to view their profile by selecting My account option on the Navbar
-  - Add new job
-    - user able to add new job to the page by selecting Add new job option on the Navbar
-  - Logout
-    - user able to logout from the page
-  - View/Delete
-    - This option is restricted to admin user only, option to gain access to this page is only visible once user logged in as an admin user
-
-#### Flash message
-- All the flash message will display just below the Navbar on every pages, python user flash library to generate the flash message and render to the page whenever required.
-
-#### Main content
-- This is the Main section of the page where informations and images are displayed to the user
-
-#### Footer
-- Small footer is created to hold the copyright information of the website which is final section of the page and sit at the bottom and each page of the website contain same footer with same copyright information
-
-### Home Page
-  - This website has very simple, easy to use and user friendly home page which is dividded into 4 sub sections which are Navbar, search field, images and footer.
-
-
-#### Search field
-- search field is situated just below Navbar on the page which allow user to search the job listed on the page just by typing the name of the job user wish to search and then hit search button on the right side of search bar, additionally reset button also added next to search field which allow user to cancel their search and simply display all the jobs available.
-
-#### Job images
-- This is the main section of the page where all the jobs available will be shown with images, Materalize card utilized on this section to render all the jobs to the page, each job will be shown with relevant image and below each image title of the Job is shown as a button, once button is clicked small modal will pop up to the screen and information retated to each job will display on the screen. All images and information related to this page stored in mongoDB collection and python language is used to render the images and information to the page from back-end.
-
-### Register page
-- This page allow user to register themself to the page which can be simply complete by filling the registration form provided, which has only 2 input fields, username and password. user must follow the certain format/pattern while registering and if user do not follow the required fromat while completing the registration form then flash message will display on top of the form to inform user about what need to be followed. Simple form with input element use to create the form and python functionality is use to check the user input and display flash message accordingly. Flash message will be diaply on the page once registration successful and user details will be stored in the mongoDB collections. Additionally this page utilize Werkzeuz security which is python library to hash the password and stored in database securley. Underneath the registration form small text with login option also provided which allow user to login directly if they are already registered however select register option by mistake. This allow user to peform registration and login task from the same page without having to navigate to the exact page.
-
-### Login page
-- This page looks very identical to register page and contains similar options however only accessible to those user who is already registered to the page, user simply need to input their username and password to login to the page, once login successful flash message will display on screen to welcome the user and user will be redirected to their own profile. This page utilize some python functionality to check and verify the users input and only allow user to login if their details matched with what they have provided while registration. Additionally python will display the flash message to inform user if username or password they supplied is not found and redirect the user back to login page again. Underneath the login form small text with registration option also provided which allow user to register directly if they are not registered however select login option by mistake. This allow user to peform registration and login task from the same page without having to navigate to the exact page.
-
-### Add new Job page
-- This option is visible to the user only once they are logged into the page, this page allow user to add their own job by completing the form provided and then hit submit button. input elements in the forms need to fullfll certain criteria and if supplied input do not match certain criteria or left empty then warning message will appear below input field and colour of the bottom border will change to red, also required attribute is utilize on this form to ensure user are not able to submit the form without completing, if any of the field left empty and hit submit button then required attribute trigger and let user knows that they must complete the field. Python funtionality also added to this page to conduct some check to ensure that only user are able to add the job. once user select the option to add new job then python function will excute and do some checks and only let user to add the job if user in the session and user who logged in are the same person, otherwise python will immediatley redirect user to login page and display flash message accordingly. Javascript in the form of jQuery is utilized to validate the form and display and hide error message accordingly while user completing the form. Once user added the information, python will then send the information to mongoDB using insertOne method and also render the information in the home page
-
-### My Account page
-- This option also only visible to the user once they are logged in. Python function will execute once user select this option and check to verify the user first and if person selecting the option is really a user then python will allow user to access the page and display welcome message to the user, if user is not verified then python will redirect user to the login page and display flash message accordingly. Once user verified and inside the page user able to see all the job added to the page by themself and also able to edit and delete if they wish to do by just clicking the buttons brovided below job images.
-  #### Edit/delete job
-  - user can edit or delete their own job once they are inside their own account, every job added by user will be shown in My account page with job images and job title, each job has two options for user which are edit and delete. Once user select edit job option then python function will trigger to check wether person trying to edit the job is really a user or not, if not then user will be redirected to login page aagin with correct flash messaeg and if the person is really the user then python will populate the form with pre-field data in the input field and allow user to update their job information. Similar to add new job form, edit job form also need to pass the input validation check which is done by utilizing Javascript in the form of jQuery. once inpt field validate and user select the update button then all the updated information will be store in the database which is done by using updateOne method.
-  Additionally user can also delete their own job, once user select delete button python will trigger the delete function and run if/else statement to check user's details and let user to act accordingly. First python will check if user is in the session or not then second step python will check if user logged in is the similar user who add this job. if both condition is satisfied they only user will be able to delete the job otherwise python will redirect the user to login page and display flash message accordingly
-  python use mongoDB remove() method to perform delete job once condition satisfied. Once user select the delete button, modal will trigger and display warning message on screen to allow user to confirm their delete request or cancel, purpose of this modal is to prevent deleting the job straightway if user select the delete button by mistake or in case user wants to change their mind once after delete button clicked. 
-
-### View/Delete page
-- This page is only for admin user, and option to access this page will only be visible once user logged in as an admin, python functionality does the initial check to ensure user logged in to the page is admin and display view/delete option if login user is really an admin user else redirect user to the login page and display flash message accordingly if user login is not an admin user. once if condition satisfied user will then have access to the page where all the jobs will be shown with image, job title and view/delete buttons. admin user can view all the jobs and also able to delete any job from this page using the buttons provided.
-
-### Logout
-- This option only visible to the user once they are logged into the page, user can simply select the logout option and they will be loggout from the page, python function will execute once user select logout option and redirect them to login page immediately and display flash message accordingly.
-
-## Future to be added in future
-- Option for user to send email enquiry/text message directly from the job information page without having to fill the form
-- option to book for the job with the company directly from the website 
-- option to allow user to make an online payment once job booked abd confirmed and send email conformation of booked job and payment to the user email.
-
 ## Technologies Used
 
-### Languages:
+### Languages Used
 - [Python](https://www.python.org/)
     - I have used  **Python** as the back-end programming language for my project.
 - [HTML](en.wikipedia.org/wiki/HTML)
@@ -205,7 +228,7 @@ id="job_modal{{ job._id }}
  - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
     - The project uses **Javascript** to allow for DOM manipulation.
 
-### Frameworks, Libraries, Programme and Resources Used:  
+### Frameworks, Libraries, Programme and Resources Used  
 - [JQuery](https://jquery.com)
   - The project uses **jQuery** as the primary JavaScript functionality. This is both the standard jQuery that is built with Materialize components, and my custom jQuery used in my script.js file.        
 - [Flask](http://flask.palletsprojects.com/en/1.1.x/)
@@ -247,7 +270,7 @@ id="job_modal{{ job._id }}
 - Code Institute SLACK Community
    -General resources
 
-### Code Validation
+## Code Validation
 
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input) 
   - W3C Markup Validation was used throughout the process to validate HTML codes
@@ -261,7 +284,8 @@ id="job_modal{{ job._id }}
   - Python tutor was used to visualize the python code and identify any error.
 
 
-
+## Testing 
+Website was tested through the build process using live browser and dev tool , additionally each pages were tested using Google Chrome, Microsoft edge and Safari. Also live pages were tested using Desktop, Laptop, iPhone, iPad and Android phone. Test document can be found here - [CLICK HERE TO VIEW](TEST.md)
 
 
 ## Deployment
@@ -285,11 +309,10 @@ I used GitHub for my version control and Heroku to host the live version of my p
    ***IP***, ***PORT***, ***MONGO_URI***, ***MONGO_DBNAME***, and ***SECRET_KEY*** (These will not be published here for security reasons).
 
 
-## Testing 
-Website was tested through the build process using live browser and dev tool , additionally each pages were tested using Google Chrome, Microsoft edge and Safari. Also live pages were tested using Desktop, Laptop, iPhone, iPad and Android phone. Test document can be found here - [CLICK HERE TO VIEW](TEST.md)
-
 ## Credit
 
 - Thanks to SDTE- Automatopn Techie for [youtube video](https://www.youtube.com/watch?v=mG3aGgFYJSE) on special character vaerification, this video help me to understand the concept of password validation with special character.
 - Thanks to The IT Guy for [youtube video](https://www.youtube.com/watch?v=W4-5WM60gWg&t=121s), this video helped me to understand the input field validation with error message on form. I have also taken some of the code from this video and modified as per my requirement.
 - Credit to My mentor Chris and entire CI support team
+
+## Acknowledgement

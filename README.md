@@ -2,7 +2,7 @@
 
 ## Aim/ Purpose
 
-The ONE-STOP Solution is a website dedicated as a platform for various self-employed people who want to sell their skills and provide services to the communities. The   website allows users to search and view various services, register and add the applicable services as well as interact with the website’s administrator to query and book available services. Furthermore, users can be added and removed by the admin. This website is my Milestone Project 3 for the Full Stack Developer course at Code Institute. In addition, I am planning to use this website to start my own online business in the near future.
+The ONE-STOP Solution is a website dedicated as a platform for various self-employed people who want to sell their skills and provide services to the communities. The   website allows users to search and view various job type, register and add their own job to the page.This website is my Milestone Project 3 for the Full Stack Developer course at Code Institute. In addition, I am planning to use this website to start my own online business in the near future.
 
 ## Table of Contents
 
@@ -37,7 +37,6 @@ The goal of this website is to provide a satisfactory user experience and an acc
 - As a frequent user, I would like to be able to search for any specific services on the website.
 - As a frequent user, I want to login to my existing account to add, edit and remove my services.
 - As a frequent user, I want to be able to save my services for other users to search and view them.
-- As a frequent user, I want to be able to contact the admin to query and book for available services.
 - As a frequent user, I would like to be able to logout from my own profile.
 
 #### Return User Goals
@@ -45,7 +44,6 @@ The goal of this website is to provide a satisfactory user experience and an acc
 - As a return user, I want to easily search for any specific services on the website.
 - As a return user, I would like to be able to access my existing profile to add, edit and remove my services.
 - As a return user, I want to be able to save my services for other users to search and view them.
-- As a return user, I want to be able to interact with the admin to query or book for various services.
 
 ## UX Framework
 
@@ -55,7 +53,7 @@ The ONE-STOP Solution is an online platform to access various services with fron
 
 ### Scope
 
-The website is interactive and allows users to input or add their own services for other users to view or display, allowing them to edit and remove or delete their registered services and search for different services. The website has CRUD functionality. The users should also be able to contact the admin and get support with query and booking of the available services.
+The website is interactive and allows users to input or add their own services for other users to view or display, allowing them to edit and remove or delete their registered services and search for different services. The website has CRUD functionality.
 
 #### Functional Requirements
 
@@ -63,7 +61,7 @@ Functional requirements include: a user-friendly navigation menu, a search bar, 
 
 #### Content Requirements
 
-The content of the site should include a header and image, as well as a navigation menu. A search bar should allow users to search for services types. For each service, an image should be included, as well as its type or category and a short description of the service. An input field for users will allow them to add different services, and they are also able to provide their availability, which will be compiled as a list or options alongside other service categories.
+The content of the site should include a header and image, as well as a navigation menu. A search bar should allow users to search for services types. For each service, an image should be included, as well as its type or category and a short description of the service. An input field for users will allow them to add different services.
 
 ### Structure
 
@@ -71,7 +69,7 @@ The website is structured to allow new visitors to view numerous services on the
 
 ### Skeleton
 
-The skeleton of the website will utilise Materialize for the CSS layout of the pages. A navigation menu will allow users to go to their chosen pages. The main landing page will function to allow users to select numerous service types or categories they are interested in, and provide links to add or edit their own services. This minimises the need for different pages for users to visit and provides a seamless experience. When adding or editing a service, additional options in the navigation menu allow the user to navigate back to their own profile, or to end the session and log out. This simplifies the number of options for the user and keeps the website easy to use.
+The skeleton of the website will utilise Materialize for the CSS layout of the pages. A navigation menu will allow users to go to their chosen pages. The main landing page will function to allow users to select numerous service types they are interested in, and provide links to add or edit their own services. This minimises the need for different pages for users to visit and provides a seamless experience. When adding or editing a service, additional options in the navigation menu allow the user to navigate back to their own profile, or to end the session and log out. This simplifies the number of options for the user and keeps the website easy to use.
 
 ### Surface
 
@@ -292,11 +290,11 @@ Website was tested through the build process using live browser and dev tool , a
 
 I used GitHub for my version control and Heroku to host the live version of my project. To deploy my website to Heroku, I used the following steps:
 
-1. Created the app in Heroku.
-2. Run the `npm install -g heroku` command in the terminal window to instal heroku in my workspace.
-3. Ran the `heroku login -i` command in the terminal window and entered my credentials to login to Heroku.
-4. Added and committed the files to Git using the `git add .` and `git commit -m ""` commands in the terminal window.
-5. Created a requirements.txt file using the following command in the terminal window:
+1. Create the app in Heroku.
+2. Run the `npm install -g heroku` command in the terminal window to install heroku in the workspace.
+3. Run the `heroku login -i` command in the terminal window and enter credentials to login to Heroku.
+4. Add and committ the files to Git using the `git add .` and `git commit -m ""` commands in the terminal window.
+5. Create a requirements.txt file using the following command in the terminal window:
 
     ```pip3 freeze --local > requirements.txt```
 
@@ -304,9 +302,17 @@ I used GitHub for my version control and Heroku to host the live version of my p
 
   ```echo web: python <fileName.py> > Procfile```
 
-8. Ran the `git push heroku master` command in the terminal window to push the app to Heroku.
+8. Run the `git push -u heroku main` command in the terminal window to push the app to Heroku.
 9. Login to the Heroku page and Entered the following Config Var in Heroku:
-   ***IP***, ***PORT***, ***MONGO_URI***, ***MONGO_DBNAME***, and ***SECRET_KEY*** (These will not be published here for security reasons).
+   - IP : `0.0.0.0`
+   - PORT : `5000`
+   - MONGO_URI :`mongodb+srv://<username>:<password></password>@<cluster_name>.9kpcw.mongodb.net/<database></database>?retryWrites=true&w=majority` 
+   - SECRET_KEY : `<your_secret_key>`
+10. Select Deploy option on Heroku and choose Github as Deployment method then connect to Github and search for repositery to connect by providing the repo name on search box.
+11. Heroku will then detect the repo on Github then, click connect
+12. Choose main branch as branch to deploy and click Enable automatic Deploys
+13. your project has now deployed to Heroku
+11. In the top right of the heroku dashboard press the "Open App" button to view your deployed Heroku app.
 
 
 ## Credit

@@ -23,7 +23,7 @@ The ONE-STOP Solution is a website dedicated as a platform for various self-empl
 - [Deployment](#deployment)
 - [Credit](#credit)
 - [Media](#media)
-- [Acknowledgements](#acknowledgement)
+- [Acknowledgements](#acknowledgements)
 
 ## User Experiences
 
@@ -82,11 +82,11 @@ The surface design of the website will also utilise Materialize CSS to provide a
 
 - As an initial process of the project design, wireframes were created for desktop, iPad and mobile screen sizes using [Balsamiq](https://balsamiq.com/).
 
-* Desktop Wireframe - [View](static/wireframes/wireframe-desktop-ms3.pdf)
+* Desktop Wireframe - [View](static/wireframes/ms3-wireframe-desktop.pdf)
 
-* iPad Wireframe - [View](static/wireframes/wireframe-ipad-ms3.pdf)
+* iPad Wireframe - [View](static/wireframes/ms3-wireframe-iPad.pdf)
 
-* Mobile Wireframe - [View](static/wireframes/wireframe-mobile-ms3.pdf)
+* Mobile Wireframe - [View](static/wireframes/ms3-wireframe-mobile.pdf)
 
 ## Existing Features
 - All the pages on this website are mainly didvided into 4 section which are:

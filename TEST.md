@@ -10,7 +10,7 @@
 #### As a first time user, I would like to be able to search for any specific jobs on the website.
 - In the Home page, there is a search function which allows users to find their desired jobs available by typing in the name of the jobs.
 - If the job is available, the search result will display the job and if the job is unavailable, the search result will be blank.
-- Once the search result is displaying the available job(s), users will be able to display the details of job(s) by clicking the job name, then a pop-up model will be displaying the job details.
+- Once the search result is displaying the available job(s), users will be able to display the details of job(s) by clicking the job name, then a pop-up modal will be displaying the job details.
 
 #### As a first time user, I would like to be able to register and create my own account on the website.
 - In the navigation bar at the top of the page, click on the Register menu and it will redirect the users to the registration page.
@@ -25,7 +25,7 @@
 - If the users click on the edit button, the edit job form will be accessible for the users to update or change the information of the selected job, then the users will be able to either update the information or cancel the updates or changes made to the job.
 - When the users update the job, a message will confirm that the job is successfully updated and redirect the users to the my account page.
 - When the users cancel editing the job, the page will be redirected to the my account page where they can view all the job list created using their account only.
-- In addition, users will be able to delete or remove their listed jobs via my account page by clicking the delete button, then a pop-up model will be displayed with a question whether the users want to confirm the deletion / removal of the job listed. The pop-up model will be the last chance for cancelling the deletion / removal of the job. Once deleted, the job will not be displayed nor recoverable in the job list and a message will show to confirm that the delete request has now completed.
+- In addition, users will be able to delete or remove their listed jobs via my account page by clicking the delete button, then a pop-up modal will be displayed with a question whether the users want to confirm the deletion / removal of the job listed. The pop-up modal will be the last chance for cancelling the deletion / removal of the job. Once deleted, the job will not be displayed nor recoverable in the job list and a message will show to confirm that the delete request has now completed.
 - Users will also be able to add a new job into the site by clicking the Add New Job menu in the navigation bar, then the add new job form will be accessible for the users to fill-in and add a new job by submitting the form.
 - The form consists of 7 fields which are mandatory to be filled in the correct formats, if one of the fields is blank, an error message will be displayed to notify the users. This error message will be displayed to each and every blank field, ensuring clear indication to the users.
 - Once the add new job form is completed and submitted, a message will confirm that the job successfully added and redirect the users to the home page in order to display the newly added job is available and accessible for all other users.
@@ -40,7 +40,7 @@
 #### As a frequent user, I would like to be able to search for any specific jobs on the website.
 - In the Home page, there is a search function which allows users to find their desired jobs available by typing in the name of the jobs.
 - If the job is available, the search result will display the job and if the job is unavailable, the search result will be blank.
-- Once the search result is displaying the available job(s), users will be able to display the details of job(s) by clicking the job name, then a pop-up model will be displaying the job details.
+- Once the search result is displaying the available job(s), users will be able to display the details of job(s) by clicking the job name, then a pop-up modal will be displaying the job details.
 
 #### As a frequent user, I want to login to my existing account to add, edit and remove my jobs.
 - The users will be able to login into the site by clicking the Login menu in the navigation bar.
@@ -49,7 +49,7 @@
 - If the users click on the edit button, the edit job form will be accessible for the users to update or change the information of the selected job, then the users will be able to either update the information or cancel the updates or changes made to the job.
 - When the users update the job, a message will confirm that the job is successfully updated and redirect the users to the my account page.
 - When the users cancel editing the job, the page will be redirected to the my account page where they can view all the job list created using their account only.
-- In addition, users will be able to delete or remove their listed jobs via my account page by clicking the delete button, then a pop-up model will be displayed with a question whether the users want to confirm the deletion / removal of the job listed. The pop-up model will be the last chance for cancelling the deletion / removal of the job. Once deleted, the job will not be displayed nor recoverable in the job list and a message will show to confirm that the delete request has now completed.
+- In addition, users will be able to delete or remove their listed jobs via my account page by clicking the delete button, then a pop-up modal will be displayed with a question whether the users want to confirm the deletion / removal of the job listed. The pop-up modal will be the last chance for cancelling the deletion / removal of the job. Once deleted, the job will not be displayed nor recoverable in the job list and a message will show to confirm that the delete request has now completed.
 - Users will also be able to add a new job into the site by clicking the Add New Job menu in the navigation bar, then the add new job form will be accessible for the users to fill-in and add a new job by submitting the form.
 - The form consists of 7 fields which are mandatory to be filled in the correct formats, if one of the fields is blank, an error message will be displayed to notify the users. This error message will be displayed to each and every blank field, ensuring clear indication to the users.
 - Once the add new job form is completed and submitted, a message will confirm that the job successfully added and redirect the users to the home page in order to display the newly added job is available and accessible for all other users.
@@ -72,14 +72,14 @@
 #### As a return user, I want to easily search for any specific jobs on the website.
 - In the Home page, there is a search function which allows users to find their desired jobs available by typing in the name of the jobs.
 - If the job is available, the search result will display the job and if the job is unavailable, the search result will be blank.
-- Once the search result is displaying the available job(s), users will be able to display the details of job(s) by clicking the job name, then a pop-up model will be displaying the job details.
+- Once the search result is displaying the available job(s), users will be able to display the details of job(s) by clicking the job name, then a pop-up modal will be displaying the job details.
 
 #### As a return user, I would like to be able to access my existing profile to add, edit and remove my jobs.
 - The users will need to login into the site, then they will be redirected to the My Account menu where they would be able to display / view their list of jobs, edit and delete any unwanted or unavailable jobs if desired.
 - If the users click on the edit button, the edit job form will be accessible for the users to update or change the information of the selected job, then the users will be able to either update the information or cancel the updates or changes made to the job
 - When the users update the job, a message will confirm that the job is successfully updated and redirect the users to the my account page
 - When the users cancel editing the job, the page will be redirected to the my account page where they can view all the job list created using their account only.
-- In addition, users will be able to delete or remove their listed jobs via my account page by clicking the delete button, then a pop-up model will be displayed with a question whether the users want to confirm the deletion / removal of the job listed. The pop-up model will be the last chance for cancelling the deletion / removal of the job. Once deleted, the job will not be displayed nor recoverable in the job list and a message will show to confirm that the delete request has now completed.
+- In addition, users will be able to delete or remove their listed jobs via my account page by clicking the delete button, then a pop-up modal will be displayed with a question whether the users want to confirm the deletion / removal of the job listed. The pop-up modal will be the last chance for cancelling the deletion / removal of the job. Once deleted, the job will not be displayed nor recoverable in the job list and a message will show to confirm that the delete request has now completed.
 - Users will also be able to add a new job into the site by clicking the Add New Job menu in the navigation bar, then the add new job form will be accessible for the users to fill-in and add a new job by submitting the form.
 - The form consists of 7 fields which are mandatory to be filled in the correct formats, if one of the fields is blank, an error message will be displayed to notify the users. This error message will be displayed to each and every blank field, ensuring clear indication to the users
 - Once the add new job form is completed and submitted, a message will confirm that the job successfully added and redirect the users to the home page in order to display the newly added job is available and accessible for all other users.
@@ -103,14 +103,14 @@
 #### As an admin of this website, I would like to easily search for any specific jobs on the website.
 - In the Home page, there is a search function which allows the admin user to find their desired jobs available by typing in the name of the jobs.
 - If the job is available, the search result will display the job and if the job is unavailable, the search result will be blank.
-- Once the search result is displaying the available job(s), the admin user will be able to display the details of job(s) by clicking the job name, then a pop-up model will be displaying the job details.
+- Once the search result is displaying the available job(s), the admin user will be able to display the details of job(s) by clicking the job name, then a pop-up modal will be displaying the job details.
 
 #### As an admin of this website, I want to be able to access My Account page and display/view, edit and delete all the jobs added by this admin account.
 - Once the login is successful, the admin user will be redirected to the My Account menu where they will be greeted with a welcome message and will be able to display / view their list of jobs, edit and delete any unwanted or unavailable jobs if desired.
 - If the admin user clicks on the edit button, the edit job form will be accessible for the users to update or change the information of the selected job, then he/she will be able to either update the information or cancel the updates or changes made to the job.
 - When the admin user updates the job, a message will confirm that the job is successfully updated and redirect the users to the my account page.
 - When the admin user cancels editing the job, the page will be redirected to the my account page where they can view all the job list created using their account only.
-- In addition, the admin user will be able to delete or remove his/her listed jobs via my account page by clicking the delete button, then a pop-up model will be displayed with a question whether the users want to confirm the deletion / removal of the job listed. The pop-up model will be the last chance for cancelling the deletion / removal of the job. Once deleted, the job will not be displayed nor recoverable in the job list and a message will show to confirm that the delete request has now completed.
+- In addition, the admin user will be able to delete or remove his/her listed jobs via my account page by clicking the delete button, then a pop-up modal will be displayed with a question whether the users want to confirm the deletion / removal of the job listed. The pop-up modal will be the last chance for cancelling the deletion / removal of the job. Once deleted, the job will not be displayed nor recoverable in the job list and a message will show to confirm that the delete request has now completed.
 
 #### As an admin of this website, I want to be able to add new jobs into the website using the provided form and submit the information.
 - The admin user will be able to add a new job into the site by clicking the Add New Job menu in the navigation bar, then the add new job form will be accessible for the users to fill-in and add a new job by submitting the form.
@@ -121,8 +121,8 @@
 - The admin user will have an additional View/Delete menu in his/her account, allowing access to display/view and delete/remove all available jobs added by other users.
 - The purpose of this menu is to provide administrative access in order to manage and control the data and details of the jobs, ensuring data cleansing and only up-to-date information are available to avoid any confusions.
 - In the view/delete page, view and delete buttons will be available for all the jobs for the admin user to click.
-- If the admin user is clicking the view button, he/she will be able to see the details of job(s) by clicking the job name, then a pop-up model will be displaying the job details.
-- If the admin user is clicking the delete button, then a pop-up model will be displayed with a question whether the admin user wants to confirm the deletion / removal of the job listed. The pop-up model will be the last chance for cancelling the deletion / removal of the job. Once deleted, the job will not be displayed nor recoverable in the job list of the home page and a message will show to confirm that the delete request has now completed.
+- If the admin user is clicking the view button, he/she will be able to see the details of job(s) by clicking the job name, then a pop-up modal will be displaying the job details.
+- If the admin user is clicking the delete button, then a pop-up modal will be displayed with a question whether the admin user wants to confirm the deletion / removal of the job listed. The pop-up modal will be the last chance for cancelling the deletion / removal of the job. Once deleted, the job will not be displayed nor recoverable in the job list of the home page and a message will show to confirm that the delete request has now completed.
 
 #### As an admin of this website, I would like to be able to logout from my own profile.
 - After finish accessing the site, click the Logout menu in the navigation bar and a message will show to confirm that the admin user has been logged out.
@@ -189,7 +189,7 @@ This project was required to be totally responsive, and mobile friendly therefor
 - Add new job option was clicked while still logged into the page, A form was displayed on the page with 7 input field, submit button was clicked without any input and warning message displayed which inform that every field is required
 - 6 out of 7 field was completed and 1 was left blank and click submit button, message shown on blank field which ask to complete the field, this process was tested with every field and outcome was same.
 - clicked on the input field and moved cursor away without typing anything, bottom border color of the input field changed to red and also [underneath each input field message was shown to inform on what format/pattern need to be followed on each input field](static/images/img-valid.jpg).
-- Image validation on the form was done slightly differently, as Image input field required imaage URl , so typed random word in input field, message shown underneath input field which [asked to provide valid url](static/images/url-issue.jpg), input field now supplied with http://showimages.com , this time no message displayed.
+- Image validation on the form was done slightly differently, as Image input field required imaage URL , so typed random word in input field, message shown underneath input field which [asked to provide valid url](static/images/url-issue.jpg), input field then after supplied with valid url, this time no message displayed.
 - This has now confirm that form validation is working as expected.
 - Once all field completed, submit button was clicked and then page was redirected to home page where job image was displayed and upon clicking on the button below job image, all details that were supplied to the form input field were shown, additionally flash message diaplayed to confirm job successfully added.
 - To ensure this page is protected I have copied the URL of this page and paste into different browser and noticed I was redirected to login page and flash message displayed with '_You must be logged in to view this page_' , this has now satisfied that python function is working and my if/else statement also working to allow only right user to add the job to their account.
@@ -226,7 +226,7 @@ This project was required to be totally responsive, and mobile friendly therefor
  - Error shown due to duplicated modal Id on account.html page which is not resolved yet, this is due modal was inside the jinja for loop and every time modal generated while loop is running, I have used more than one modal on my page and I have ensured that each modal has unique ID.
 
 ### Javascript codes
-- Codes were checked using [JSHINT]((https://jshint.com/) - All codes passed
+- Codes were checked using [JSHINT](https://jshint.com/) - All codes passed
 
 ### CSS codes
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) used for CSS code validation - All codes passed without any error.

@@ -98,10 +98,6 @@ nav .brand-logo {
     background-color: #ffffff !important;
 }
 
-/* .input-row{
-    margin-top: 9.8%;
-} */
-
 .main-heading{
     margin-top: 5%;
     margin-bottom: -5%;
@@ -177,11 +173,9 @@ border-top: 1px solid #d8abab;
 /* ------- footer ------*/
 #footer{
     background: linear-gradient(to right, #a06529f7, #da3434);
-    /* left: 0; */
     bottom: 0;
     width: 100vw;
     height: 5vh;
-    /* margin-top: auto; */
     position: static;
     margin-bottom: 0;
 }
@@ -266,10 +260,6 @@ border-top: 1px solid #d8abab;
     .text-info{
         padding-bottom: 10%;
     }
-
-    /* .input-row{
-        margin-top: 15%;
-    } */
 
     #footer{
         height: 9vh;

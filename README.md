@@ -322,6 +322,7 @@ I used GitHub for my version control and Heroku to host the live version of my p
 
 - Thanks to SDTE- Automatopn Techie for [youtube video](https://www.youtube.com/watch?v=mG3aGgFYJSE) on special character vaerification, this video help me to understand the concept of password validation with special character.
 - Thanks to The IT Guy for [youtube video](https://www.youtube.com/watch?v=W4-5WM60gWg&t=121s), this video helped me to understand the input field validation with error message on form. I have also taken some of the code from this video and modified as per my requirement.
+- Credit to [techiedelight](https://www.techiedelight.com/restrict-html-input-text-box-to-allow-only-numeric-values/) for the online post on Restrict an HTML input text box to allow only numeric values. I have taken the code from this post to restrict user from providing numbers only while creating cost and contact number element on my form.
 
 ## Media
 - All the images used in this project are taken from [Google](https://www.google.com/)

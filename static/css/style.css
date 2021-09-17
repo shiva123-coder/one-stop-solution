@@ -189,7 +189,7 @@ border-top: 1px solid #d8abab;
 .footer-text{
     color: #fff;
     font-weight:500;
-    padding-top: 10px
+    padding-top: 10px;
 }
 /*----media screen ---*/
 
@@ -198,7 +198,6 @@ border-top: 1px solid #d8abab;
         margin-top: 15%;
         margin-bottom: 5%;
     }
-    
 }
 
 @media screen and (min-width:768px){
@@ -220,20 +219,29 @@ border-top: 1px solid #d8abab;
     .main-heading{
         margin-top: 32%;
     }
+
+    .footer-text{
+        padding-top: 2%;
+    }
    
 }
 
 @media screen and (max-width:768px){
     .main-heading{
-        margin-top: 25%;
+        margin-top: 10%;
         margin-bottom: 5%;
     }
 }
 
 
 @media screen and (max-width:576px){
+    .nav-wrapper .brand-logo{
+        font-size: 1.75rem;
+        margin-left: 0;
+    }
+
     .main-heading{
-        margin-top: 40%;
+        margin-top: 20%;
     }
     .page-heading{
         font-size: small;
@@ -245,14 +253,23 @@ border-top: 1px solid #d8abab;
 
 
 @media screen and (max-width:330px){
+    .nav-wrapper .brand-logo{
+        font-size: 1.25rem;
+        margin-left: 0;
+    }
+    
     .main-heading{
         margin-top: 10%;
-        padding-bottom: 20%;
+        padding-bottom: 8%;
     }
 
     .text-info{
-        padding-bottom: 20%;
+        padding-bottom: 10%;
     }
+
+    /* .input-row{
+        margin-top: 15%;
+    } */
 
     #footer{
         height: 9vh;

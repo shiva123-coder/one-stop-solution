@@ -38,9 +38,10 @@
             <div class="row col s12 offset-m2 m8 offset-l3 l6">
                 <div class="input-field">
                     <i class="fas fa-pound-sign prefix"></i>
-                    <input id="cost" value="{{ job.cost }}" name="cost" type="number"
-                        class="validate"  minlength="1" maxlength="3" required>
-                    <label for="cost">Cost p/h</label>
+                    <input id="cost" value="{{ job.cost }}" name="cost" type="number" class="validate" 
+                        minlength="1" maxlength="3"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
+                    <label for="cost">Cost</label>
                     <small class="center-align red-text" id="error_cost"></small>
                 </div>
             </div>
@@ -49,7 +50,8 @@
                 <div class="input-field">
                     <i class="fas fa-phone-alt prefix"></i>
                     <input id="phone" value="{{ job.phone }}" name="phone" type="tel"
-                        class="validate"  minlength="9" maxlength="13"required>
+                        class="validate"  minlength="9" maxlength="13" 
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
                     <label for="phone">Contact no</label>
                     <small class="center-align red-text" id="error_phone"></small>
                 </div>

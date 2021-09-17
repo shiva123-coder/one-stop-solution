@@ -214,3 +214,20 @@ This project was required to be totally responsive, and mobile friendly therefor
 - It is required to logged into the page in oder to see this option on the navbar so I logged into the page using test123 account and logout option was seen on the navbar
 - Once clicked o logout option, page was redirected to login page and flash message displayed with text '_You have been logged out_'
 - this has now satisfied that logout functionality is working as expected.
+
+
+## Code Validation
+
+### Python code
+- All python codes were checked by using PEP8 online checker - All codes were PEP8 compliant and no issue
+
+### HTML codes
+- HTML codes were tested using [W3C Markup Validation](https://validator.w3.org/#validate_by_input) 
+ - Error shown due to duplicated modal Id on account.html page which is not resolved yet, this is due modal was inside the jinja for loop and every time modal generated while loop is running, I have used more than one modal on my page and I have ensured that each modal has unique ID.
+ - Attribute error shown while testing add_job template and this remain unsolved as well, I required user to restric with certain minlength and maxlength to my input field on my form therefore I have leave this unchanged however I will definitely looking to resolve this in my further work.
+
+### Javascript codes
+- Codes were checked using [JSHINT]((https://jshint.com/) - All codes passed
+
+### CSS codes
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) used for CSS code validation - All codes passed without any error.

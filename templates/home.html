@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
   <h3 class="center-align page-heading">Welcome to OSS Limited, <small class="slogan">one platform for all solutions</small></h3>
+  <!---search field-->
   <div class="row card-panel white ">
       <form action="{{ url_for('search') }}" method="post" class="col s12 offset-m1 m10">
           <div class="row valign-wrapper center-align">
@@ -18,6 +19,7 @@
           </div>
       </form>
   </div>
+  <!--job images and information-->
   <div class="row center-align">
       {% for job in jobs %}
         <div class="col s12 m6 l4">
@@ -35,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <!------Modal--- -->
+        <!---Modal-->
         <div id="job_modal{{ job._id }}" class="modal">
             <div class="modal-content">
                 <h4 class="center-align">Our details</h4>

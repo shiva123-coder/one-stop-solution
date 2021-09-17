@@ -19,7 +19,6 @@
                             href="{{ url_for('edit_job',job_id=service._id) }}">Edit
                             <i class="fas fa-eye"></i>
                         </a>
-                        </a>
                         <a class="waves-effect waves-light white black-text btn modal-trigger btn-admin"
                             href="#job_modal1">Delete
                             <i class="fas fa-trash-alt"></i>
@@ -27,8 +26,8 @@
                     </div>
                 </div>
             </div>
-            <!------Modal--- -->
-            <div id="job_modal" class="modal">
+            <!---Modal-->
+            <!-- <div id="job_modal" class="modal">
                 <div class="modal-content">
                     <h4 class="center-align">Our details</h4>
                     <p class="job-info">
@@ -48,7 +47,7 @@
                 <div class="modal-footer">
                     <a href="#" class="modal-close waves-effect waves-light grey black-text btn">Cancel</a>
                 </div>
-            </div>
+            </div> -->
             <div id="job_modal1" class="modal">
                 <div class="modal-content">
                     <h4 class="center-align text-warning-head">Are you sure you want to delete the job?</h4>
@@ -63,6 +62,5 @@
             </div>
         </div>
     {% endif %}
-    <!-- </div> -->
 {% endfor %}
 {% endblock %}

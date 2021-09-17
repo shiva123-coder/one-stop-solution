@@ -82,11 +82,11 @@ The surface design of the website will also utilise Materialize CSS to provide a
 
 - As an initial process of the project design, wireframes were created for desktop, iPad and mobile screen sizes using [Balsamiq](https://balsamiq.com/).
 
-* Desktop Wireframe - [View](static/wireframes/ms3-wireframe-desktop.pdf)
+* Desktop Wireframe - [View](wireframes/ms3-wireframe-desktop.pdf)
 
-* iPad Wireframe - [View](static/wireframes/ms3-wireframe-iPad.pdf)
+* iPad Wireframe - [View](wireframes/ms3-wireframe-iPad.pdf)
 
-* Mobile Wireframe - [View](static/wireframes/ms3-wireframe-mobile.pdf)
+* Mobile Wireframe - [View](wireframes/ms3-wireframe-mobile.pdf)
 
 ## Existing Features
 - All the pages on this website are mainly didvided into 4 section which are:

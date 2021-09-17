@@ -1,5 +1,7 @@
 # ONE-STOP Solution
 
+![image](static/inages/responsive-image.jpg)
+
 ## Aim/ Purpose
 
 The ONE-STOP Solution is a website dedicated as a platform for various self-employed people who want to sell their skills and provide services to the communities. The   website allows users to search and view various job type, register and add their own job to the page.This website is my Milestone Project 3 for the Full Stack Developer course at Code Institute. In addition, I am planning to use this website to start my own online business in the near future.
@@ -20,7 +22,8 @@ The ONE-STOP Solution is a website dedicated as a platform for various self-empl
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Credit](#credit)
-- [Acknowledgement](#acknowledgement)
+- [Media](#media)
+- [Acknowledgements](#acknowledgement)
 
 ## User Experiences
 
@@ -288,7 +291,7 @@ Website was tested through the build process using live browser and dev tool , a
 
 ## Deployment
 
-I used GitHub for my version control and Heroku to host the live version of my project. To deploy my website to Heroku, I used the following steps:
+I used GitHub for my version control and Heroku to host the live version of my project. To deploy my website to Heroku, use following steps:
 
 1. Create the app in Heroku.
 2. Run the `npm install -g heroku` command in the terminal window to install heroku in the workspace.
@@ -312,13 +315,22 @@ I used GitHub for my version control and Heroku to host the live version of my p
 11. Heroku will then detect the repo on Github then, click connect
 12. Choose main branch as branch to deploy and click Enable automatic Deploys
 13. your project has now deployed to Heroku
-11. In the top right of the heroku dashboard press the "Open App" button to view your deployed Heroku app.
+14. In the top right of the heroku dashboard press the "Open App" button to view your deployed Heroku app.
 
 
 ## Credit
 
 - Thanks to SDTE- Automatopn Techie for [youtube video](https://www.youtube.com/watch?v=mG3aGgFYJSE) on special character vaerification, this video help me to understand the concept of password validation with special character.
 - Thanks to The IT Guy for [youtube video](https://www.youtube.com/watch?v=W4-5WM60gWg&t=121s), this video helped me to understand the input field validation with error message on form. I have also taken some of the code from this video and modified as per my requirement.
-- Credit to My mentor Chris and entire CI support team
 
-## Acknowledgement
+## Media
+- All the images used in this project are taken from [Google](https://www.google.com/)
+
+## Acknowledgements
+- I would like to thank my mentor Chris Quinn for his guidance and advice on this project before submission.
+- Thanks to everyone on Slack Community for always being on-hand with requests and support.
+- Thanks to everyone on CI tutor support team for always providing with the support and guidance.
+- Thanks to everyone from Student Care team (CI) for keeping me update with all changes such as tutor support availibility holiday period and most importantly checking regularly on my progress and always ready to support on my study.
+
+## Disclaimer
+- This website was build for educational purpose only

@@ -1,6 +1,6 @@
 # ONE-STOP Solution
 
-![image](static/inages/responsive-image.jpg)
+![image](static/images/responsive-image.jpg)
 
 ## Aim/ Purpose
 
